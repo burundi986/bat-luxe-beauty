@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bat-luxe beauty</title>
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Bat<span>Luxe</span> Beauty</a>
+                <ul class="nav-links">
+                    <li><a href="HOME.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- <li><a href="BLOG.HTML">Blog</a></li> -->
+                </ul>
+                <div class="nav-icons">
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <a href="PROFILE.html"><i class="fas fa-user"></i></a>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Luxury Beauty, Elevated</h1>
+                <p>Glow In Your Own Luxury</p>
+                <a href="shop.html" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section class="countdown">
+          <div class="countdown" aria-hidden="false" id="countdown">
+            <div class="unit"><div class="num" id="days">00</div><div class="label">Days</div></div>
+            <div class="unit"><div class="num" id="hours">00</div><div class="label">Hours</div></div>
+            <div class="unit"><div class="num" id="minutes">00</div><div class="label">Minutes</div></div>
+            <div class="unit"><div class="num" id="seconds">00</div><div class="label">Seconds</div></div>
+          </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Products</h2>
+                <p>Discover our best-selling beauty essentials</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Lashes" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Lashes</div>
+                        <h3 class="product-name">BatLuxe Feline Lashes</h3>
+                        <div class="product-price">$24.99</div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="1" data-name="BatLuxe Feline Lashes" data-price="24.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Lip Gloss" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Lip Gloss</div>
+                        <h3 class="product-name">Lush Lips Gloss</h3>
+                        <div class="product-price">$18.99</div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="2" data-name="Lush Lips Gloss" data-price="18.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Press-on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Nails</div>
+                        <h3 class="product-name">Press-on Luxury Set</h3>
+                        <div class="product-price">$29.99</div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="3" data-name="Press-on Luxury Set" data-price="29.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lip Liner" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Lip Liner</div>
+                        <h3 class="product-name">Precision Lip Liner</h3>
+                        <div class="product-price">$14.99</div>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="4" data-name="Precision Lip Liner" data-price="14.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+            <p class="empty-cart-message" id="emptyCartMessage">Your cart is empty</p>
+        </div>
+        
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Delivery Fee</span>
+                <span id="deliveryFee">$0.00</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="total">$0.00</span>
+            </div>
+            
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        Item added to cart successfully!
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BatLuxe Beauty</h3>
+                    <p>Glow In Your Own Luxury</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/batluxebeautyuk?igsh=MThxdTV4ZXB2cDd3aw%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@batluxebeautyuk?_r=1&_t=ZN-91Z0W4zfwTW"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="HOME.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <!-- <li><a href="BLOG.HTML">Blog</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="SHIPPINGANDRETURNS.HTML">Shipping & Returns</a></li>
+                        <li><a href="PRIVACY-POLICY.HTML">Privacy Policy</a></li>
+                        <li><a href="term.condition.html">Terms & Conditions</a></li>
+                        <li><a href="faq-question.html">FAQ</a></li>
+                        <!-- <li><a href="#">Track Order</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 BatLuxe Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cart elements
+            const cartIcon = document.getElementById('cartIcon');
+            const cartSidebar = document.getElementById('cartSidebar');
+            const closeCart = document.getElementById('closeCart');
+            const overlay = document.getElementById('overlay');
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const emptyCartMessage = document.getElementById('emptyCartMessage');
+            const subtotalElement = document.getElementById('subtotal');
+            const deliveryFeeElement = document.getElementById('deliveryFee');
+            const totalElement = document.getElementById('total');
+            const notification = document.getElementById('notification');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+            
+            // Cart data
+            let cart = [];
+            const deliveryFee = 5.99; // Fixed delivery fee
+            const freeDeliveryThreshold = 50.00; // Free delivery for orders over $50
+            
+            // Event Listeners
+            cartIcon.addEventListener('click', openCart);
+            closeCart.addEventListener('click', closeCartSidebar);
+            overlay.addEventListener('click', closeCartSidebar);
+            
+            // Add to cart buttons
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-id');
+                    const productName = this.getAttribute('data-name');
+                    const productPrice = parseFloat(this.getAttribute('data-price'));
+                    const productImage = this.getAttribute('data-image');
+                    
+                    addToCart(productId, productName, productPrice, productImage);
+                });
+            });
+            
+            // Functions
+            function openCart() {
+                cartSidebar.classList.add('active');
+                overlay.classList.add('active');
+            }
+            
+            function closeCartSidebar() {
+                cartSidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+            
+            function addToCart(id, name, price, image) {
+                // Check if item already exists in cart
+                const existingItemIndex = cart.findIndex(item => item.id === id);
+                
+                if (existingItemIndex !== -1) {
+                    // Update quantity if item already exists
+                    cart[existingItemIndex].quantity += 1;
+                } else {
+                    // Add new item to cart
+                    cart.push({
+                        id: id,
+                        name: name,
+                        price: price,
+                        image: image,
+                        quantity: 1
+                    });
+                }
+                
+                // Update UI
+                updateCartUI();
+                
+                // Show notification
+                showNotification();
+            }
+            
+            function updateCartUI() {
+                // Update cart count
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = totalItems;
+                
+                // Update cart items
+                cartItems.innerHTML = '';
+                
+                if (cart.length === 0) {
+                    emptyCartMessage.style.display = 'block';
+                } else {
+                    emptyCartMessage.style.display = 'none';
+                    
+                    cart.forEach((item, index) => {
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <div class="item-image">
+                                <img src="${item.image}" alt="${item.name}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">${item.name}</div>
+                                <div class="item-price">$${item.price.toFixed(2)}</div>
+                                <div class="item-quantity">
+                                    <button class="quantity-btn minus" data-index="${index}">-</button>
+                                    <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-index="${index}">
+                                    <button class="quantity-btn plus" data-index="${index}">+</button>
+                                </div>
+                                <button class="remove-item" data-index="${index}">Remove</button>
+                            </div>
+                        `;
+                        cartItems.appendChild(cartItem);
+                    });
+                    
+                    // Add event listeners to quantity buttons and remove buttons
+                    document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                        btn.addEventListener('click', decreaseQuantity);
+                    });
+                    
+                    document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                        btn.addEventListener('click', increaseQuantity);
+                    });
+                    
+                    document.querySelectorAll('.quantity-input').forEach(input => {
+                        input.addEventListener('change', updateQuantity);
+                    });
+                    
+                    document.querySelectorAll('.remove-item').forEach(btn => {
+                        btn.addEventListener('click', removeItem);
+                    });
+                }
+                
+                // Update cart summary
+                updateCartSummary();
+            }
+            
+            function updateCartSummary() {
+                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                
+                // Calculate delivery fee (free if subtotal is over threshold)
+                const calculatedDeliveryFee = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
+                
+                const total = subtotal + calculatedDeliveryFee;
+                
+                subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                deliveryFeeElement.textContent = calculatedDeliveryFee === 0 ? 'FREE' : `$${calculatedDeliveryFee.toFixed(2)}`;
+                totalElement.textContent = `$${total.toFixed(2)}`;
+            }
+            
+            function decreaseQuantity(e) {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                if (cart[index].quantity > 1) {
+                    cart[index].quantity--;
+                    updateCartUI();
+                }
+            }
+            
+            function increaseQuantity(e) {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                cart[index].quantity++;
+                updateCartUI();
+            }
+            
+            function updateQuantity(e) {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                const newQuantity = parseInt(e.target.value);
+                
+                if (newQuantity > 0) {
+                    cart[index].quantity = newQuantity;
+                    updateCartUI();
+                } else {
+                    // If invalid quantity, reset to previous value
+                    e.target.value = cart[index].quantity;
+                }
+            }
+            
+            function removeItem(e) {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                cart.splice(index, 1);
+                updateCartUI();
+            }
+            
+            function showNotification() {
+                notification.classList.add('active');
+                setTimeout(() => {
+                    notification.classList.remove('active');
+                }, 3000);
+            }
+            
+            // Mobile Navigation Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Countdown Timer
+            const target = new Date('2025-12-01T00:00:00Z').getTime();
+            function tick(){
+                const now = Date.now();
+                const diff = target - now;
+                if(diff<=0){
+                    document.getElementById('countdown').innerHTML='<div style="padding:12px;background:var(--white);border-radius:10px">We are live!</div>';
+                    return;
+                }
+                const days = Math.floor(diff / (1000*60*60*24));
+                const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+                const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+                const seconds = Math.floor((diff % (1000*60)) / 1000);
+                document.getElementById('days').textContent = String(days).padStart(2,'0');
+                document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
+            }
+            setInterval(tick,1000);
+            tick();
+        });
+    </script>
+    
+   
+</body>
+</html>

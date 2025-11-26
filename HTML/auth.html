@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BatLuxe Beauty</title>
+    <link rel="stylesheet" href="../CSS/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-icon">
+            <i class="fas fa-bell"></i>
+        </div>
+        <div class="notification-content">
+            <div class="notification-title" id="notificationTitle">Notification</div>
+            <div class="notification-message" id="notificationMessage"></div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <!-- <nav class="navbar"> 
+                <a href="index.html" class="logo">Bat<span>Luxe</span> Beauty</a>
+                 <ul class="nav-links">
+                     <li><a href="index.html">Home</a></li> --
+                     <li><a href="shop.html">Shop</a></li> --
+                     <li><a href="about.html">About</a></li> --
+                     <li><a href="contact.html">Contact</a></li> --
+                 -- <li><a href="blog.html">Blog</a></li> -- -->
+                </ul> 
+                <div class="nav-icons">
+                    <!-- <a href="search.html"><i class="fas fa-search"></i></a> -- -->
+                     <!-- <a href="cart.html"><i class="fas fa-shopping-bag"></i></a> -- -->
+                    <!-- <a href="login.html"><i class="fas fa-user"></i></a> -->
+                    <div class="hamburger">
+                        <!-- <i class="fas fa-bars"></i> -->
+                    </div> 
+                </div>
+            </nav> 
+        </div>
+    </header>
+
+    <!-- Auth Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <!-- Auth Image -->
+            <div class="auth-image">
+                <div class="auth-image-content">
+                    <h2>Welcome to BatLuxe Beauty</h2>
+                    <p>Join our community of beauty enthusiasts and discover luxury products crafted just for you.</p>
+                </div>
+            </div>
+
+            <!-- Auth Forms -->
+            <div class="auth-forms">
+                <!-- Tabs -->
+                <div class="auth-tabs">
+                    <div class="auth-tab active" data-tab="login">Login</div>
+                    <div class="auth-tab" data-tab="signup">Sign Up</div>
+                </div>
+
+                <!-- Login Form -->
+                <div class="auth-form active" id="loginForm">
+                    <h2 class="form-title">Welcome Back</h2>
+                    <p class="form-subtitle">Sign in to your account to continue</p>
+
+                    <form id="loginFormElement">
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address</label>
+                            <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="form-options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="rememberMe">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn" style="width: 100%;">Sign In</button>
+                    </form>
+
+                    <div class="auth-divider">
+                        <span>Or continue with</span>
+                    </div>
+
+                    <div class="social-auth">
+                        <button class="social-btn google">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                    </div>
+
+                    <div class="form-footer">
+                        Don't have an account? <a href="#" class="switch-to-signup">Sign up</a>
+                    </div>
+                </div>
+
+                <!-- Signup Form -->
+                <div class="auth-form" id="signupForm">
+                    <h2 class="form-title">Create Account</h2>
+                    <p class="form-subtitle">Join BatLuxe Beauty today</p>
+
+                    <form id="signupFormElement">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="signupFirstName">First Name</label>
+                                <input type="text" id="signupFirstName" class="form-control" placeholder="First name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signupLastName">Last Name</label>
+                                <input type="text" id="signupLastName" class="form-control" placeholder="Last name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupEmail">Email Address</label>
+                            <input type="email" id="signupEmail" class="form-control" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupPhone">Phone Number (Optional)</label>
+                            <input type="tel" id="signupPhone" class="form-control" placeholder="Phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <input type="password" id="signupPassword" class="form-control" placeholder="Create a password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupConfirmPassword">Confirm Password</label>
+                            <input type="password" id="signupConfirmPassword" class="form-control" placeholder="Confirm your password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="agreeTerms" required>
+                                I agree to the <a href="#" style="color: var(--dark-pink);">Terms of Service</a> and <a href="#" style="color: var(--dark-pink);">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                         <!-- <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="newsletterSignup" checked>
+                                Subscribe to our newsletter for beauty tips and exclusive offers
+                            </label>
+                        </div>  -->
+
+                        <button type="submit" class="btn" style="width: 100%;">Create Account</button>
+                    </form>
+
+                    <div class="auth-divider">
+                        <span>Or sign up with</span>
+                    </div>
+
+                    <div class="social-auth">
+                        <button class="social-btn google">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                    </div>
+
+                    <div class="form-footer">
+                        Already have an account? <a href="#" class="switch-to-login">Sign in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BatLuxe Beauty</h3>
+                    <p>Luxury beauty products crafted with precision and passion for the modern woman.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/batluxebeautyuk"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a> 
+                        <a href="https://www.tiktok.com/@batluxebeautyuk"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.pinterest.com"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                         <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                         <li><a href="blog.html">Blog</a></li> 
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="faq-question.html">FAQ</a></li>
+                        <li><a href="track-order.html">Track Order</a></li>
+                    </ul>
+                </div> 
+            </div>
+            <div class="copyright"> 
+                <p>&copy; 2025 BatLuxe Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>  -->
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Auth Tabs Functionality
+        const authTabs = document.querySelectorAll('.auth-tab');
+        const authForms = document.querySelectorAll('.auth-form');
+        const switchToSignupLinks = document.querySelectorAll('.switch-to-signup');
+        const switchToLoginLinks = document.querySelectorAll('.switch-to-login');
+
+        // Switch tab function
+        function switchTab(tabName) {
+            // Update tabs
+            authTabs.forEach(tab => {
+                if (tab.dataset.tab === tabName) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            // Update forms
+            authForms.forEach(form => {
+                if (form.id === `${tabName}Form`) {
+                    form.classList.add('active');
+                } else {
+                    form.classList.remove('active');
+                }
+            });
+        }
+
+        // Tab click events
+        authTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                switchTab(tab.dataset.tab);
+            });
+        });
+
+        // Switch to signup
+        switchToSignupLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchTab('signup');
+            });
+        });
+
+        // Switch to login
+        switchToLoginLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchTab('login');
+            });
+        });
+
+        // Show Notification
+        function showNotification(message, type = 'info') {
+            const notification = document.getElementById('notification');
+            const notificationTitle = document.getElementById('notificationTitle');
+            const notificationMessage = document.getElementById('notificationMessage');
+            
+            notificationMessage.textContent = message;
+            
+            // Set notification type
+            notification.className = 'notification';
+            if (type === 'success') {
+                notification.classList.add('notification-success');
+                notificationTitle.textContent = 'Success!';
+            } else if (type === 'error') {
+                notification.classList.add('notification-error');
+                notificationTitle.textContent = 'Error!';
+            } else {
+                notificationTitle.textContent = 'Info';
+            }
+            
+            notification.classList.add('active');
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('active');
+            }, 5000);
+        }
+
+        // Login Form Submission
+        const loginForm = document.getElementById('loginFormElement');
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+            
+            // Basic validation
+            if (!email || !password) {
+                showNotification('Please fill in all fields', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = loginForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Signing In...';
+            submitBtn.disabled = true;
+            
+            try {
+                // In a real application, you would make an API call here
+                // For demo purposes, we'll simulate an API call
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // Simulate successful login
+                if (email === 'demo@batluxe.com' && password === 'password') {
+                    showNotification('Login successful! Redirecting...', 'success');
+                    
+                    // Store user data in localStorage
+                    localStorage.setItem('batluxe_user', JSON.stringify({
+                        id: 1,
+                        email: email,
+                        firstName: 'Demo',
+                        lastName: 'User',
+                        isLoggedIn: true
+                    }));
+                    
+                    // Store auth token
+                    localStorage.setItem('batluxe_token', 'demo-auth-token');
+                    
+                    // Redirect to dashboard or previous page
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                } else {
+                    showNotification('Invalid email or password', 'error');
+                }
+            } catch (error) {
+                showNotification('Login failed. Please try again.', 'error');
+                console.error('Login error:', error);
+            } finally {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Signup Form Submission
+        const signupForm = document.getElementById('signupFormElement');
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('signupFirstName').value;
+            const lastName = document.getElementById('signupLastName').value;
+            const email = document.getElementById('signupEmail').value;
+            const phone = document.getElementById('signupPhone').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('signupConfirmPassword').value;
+            const agreeTerms = document.getElementById('agreeTerms').checked;
+            
+            // Validation
+            if (!firstName || !lastName || !email || !password || !confirmPassword) {
+                showNotification('Please fill in all required fields', 'error');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                showNotification('Passwords do not match', 'error');
+                return;
+            }
+            
+            if (password.length < 8) {
+                showNotification('Password must be at least 8  characters', 'error');
+                return;
+            }
+            
+            if (!agreeTerms) {
+                showNotification('Please agree to the Terms of Service', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = signupForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Creating Account...';
+            submitBtn.disabled = true;
+            
+            try {
+                // In a real application, you would make an API call here
+                // For demo purposes, we'll simulate an API call
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // Simulate successful registration
+                showNotification('Account created successfully! Welcome to BatLuxe Beauty.', 'success');
+                
+                // Store user data in localStorage
+                localStorage.setItem('batluxe_user', JSON.stringify({
+                    id: Math.floor(Math.random() * 1000),
+                    email: email,
+                    firstName: firstName,
+                    lastName: lastName,
+                    phone: phone,
+                    isLoggedIn: true
+                }));
+                
+                // Store auth token
+                localStorage.setItem('batluxe_token', 'demo-auth-token');
+                
+                // Redirect to dashboard
+                setTimeout(() => {
+                    window.location.href = 'home.html';
+                }, 2000);
+            } catch (error) {
+                showNotification('Registration failed. Please try again.', 'error');
+                console.error('Signup error:', error);
+            } finally {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Social Login Buttons
+        const socialButtons = document.querySelectorAll('.social-btn');
+        socialButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const provider = button.classList.contains('google') ? 'Google' : 'Facebook';
+                showNotification(`${provider} authentication would be implemented here`, 'info');
+            });
+        });
+
+        // Forgot Password
+        const forgotPasswordLink = document.querySelector('.forgot-password');
+        forgotPasswordLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showNotification('Password reset functionality would be implemented here', 'info');
+        });
+
+        // Newsletter Form
+        const newsletterForm = document.getElementById('newsletterForm');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showNotification('Thank you for subscribing to our newsletter!', 'success');
+            newsletterForm.reset();
+        });
+
+        // Terms and Privacy Policy links
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            if (link.textContent.includes('Terms of Service') || link.textContent.includes('Privacy Policy')) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showNotification('This would open the Terms of Service or Privacy Policy page', 'info');
+                });
+            }
+        });
+
+        // Check if user is already logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            const userData = localStorage.getItem('batluxe_user');
+            if (userData) {
+                const user = JSON.parse(userData);
+                if (user.isLoggedIn) {
+                    // Update navigation to show user is logged in
+                    const userIcon = document.querySelector('.fa-user');
+                    userIcon.style.color = 'var(--dark-pink)';
+                    
+                    // You could also show a welcome message
+                    console.log('User is logged in:', user.firstName);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - BatLuxe Beauty</title>
+    <link rel="stylesheet" href="../CSS/CHECKOUT.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Bat<span>Luxe</span> Beauty</a>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-shopping-bag"></i>
+                    <i class="fas fa-user"></i>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Checkout</h1>
+            <p>Complete your purchase securely</p>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout">
+        <div class="container">
+            <!-- Checkout Steps -->
+            <div class="checkout-steps">
+                <div class="step active" id="step1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Shipping</div>
+                </div>
+                <div class="step" id="step2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="step" id="step3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+
+            <div class="checkout-container">
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <!-- Shipping Information -->
+                    <div class="form-section active" id="shipping-section">
+                        <h2>Shipping Information</h2>
+                        <form id="shipping-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Street Address</label>
+                                <input type="text" id="address" class="form-control" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input type="text" id="state" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="zipCode">ZIP Code</label>
+                                    <input type="text" id="zipCode" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <select id="country" class="form-control" required>
+                                        <option value="">Select Country</option>
+                                        <option value="NG" >Nigeria</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="UK" selected>United Kingdom</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="saveAddress"> Save this address for future orders
+                                </label>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary" disabled>Back</button>
+                                <button type="button" class="btn" id="next-to-payment">Continue to Payment</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Payment Information -->
+                    <div class="form-section" id="payment-section">
+                        <h2>Payment Method</h2>
+                        <div class="payment-methods">
+                            <div class="payment-method active" data-method="card">
+                                <div class="payment-icon">
+                                    <i class="far fa-credit-card"></i>
+                                </div>
+                                <p>Credit Card</p>
+                            </div>
+                            <div class="payment-method" data-method="paypal">
+                                <div class="payment-icon">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                                <p>PayPal</p>
+                            </div>
+                            <div class="payment-method" data-method="apple">
+                                <div class="payment-icon">
+                                    <i class="fab fa-apple"></i>
+                                </div>
+                                <p>Apple Pay</p>
+                            </div>
+                            <div class="payment-method" data-method="google">
+                                <div class="payment-icon">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <p>Google Pay</p>
+                            </div>
+                            <div class="payment-method" data-method="google">
+                                <div class="payment-icon">
+                                    <i class="fab fa-stripe"></i>
+                                </div>
+                                <p>stripe</p>
+                            </div>
+                        </div>
+
+                        <!-- Card Payment Form -->
+                        <div class="card-form" id="card-form">
+                            <form id="payment-form">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiryDate">Expiry Date</label>
+                                        <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" class="form-control" placeholder="123" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card</label>
+                                    <input type="text" id="cardName" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" id="saveCard"> Save card for future purchases
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Security Badges -->
+                        <div class="security-badges">
+                            <div class="security-badge">
+                                <i class="fas fa-lock"></i>
+                                <span>Secure Payment</span>
+                            </div>
+                            <div class="security-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>SSL Encrypted</span>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary" id="back-to-shipping">Back</button>
+                            <button type="button" class="btn" id="complete-order">Complete Order</button>
+                        </div>
+                    </div>
+
+                    <!-- Order Confirmation -->
+                    <div class="order-confirmation" id="confirmation-section">
+                        <div class="confirmation-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>Order Confirmed!</h2>
+                        <p>Thank you for your purchase. Your order has been successfully placed.</p>
+                        <p>Order #: <strong>BLX-2023-5876</strong></p>
+                        
+                        <div class="order-details">
+                            <h3>Order Details</h3>
+                            <div class="detail-row">
+                                <span>Order Total:</span>
+                                <span>$97.96</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>Shipping:</span>
+                                <span>20$</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>Estimated Delivery:</span>
+                                <span>October 28, 2023</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>Shipping Address:</span>
+                                <span>123 Beauty Ave, Los Angeles, CA 90210</span>
+                            </div>
+                        </div>
+                        
+                        <p>A confirmation email has been sent to <strong>customer@example.com</strong></p>
+                        <div class="form-navigation" style="justify-content: center; margin-top: 30px;">
+                            <a href="home.html" class="btn">Continue Shopping</a>
+                            <a href="#" class="btn btn-secondary">Track Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="order-items">
+                        <!-- Item 1 -->
+                        <div class="order-item">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1583494939362-4c6b63b29e76?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="BatLuxe Feline Lashes">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">BatLuxe Feline Lashes</div>
+                                <div class="item-variant">Style: Dramatic</div>
+                                <div class="item-price">$24.99</div>
+                                <div class="item-quantity">Qty: 1</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="order-item">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lush Lips Gloss">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">Lush Lips Gloss</div>
+                                <div class="item-variant">Color: Pink Sparkle</div>
+                                <div class="item-price">$18.99</div>
+                                <div class="item-quantity">Qty: 2</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div class="order-item">
+                            <div class="item-image">
+                                <img src="https://images.unsplash.com/photo-1604658244477-623b31c87fd5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Press-on Nails">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">Luxury Press-on Nails</div>
+                                <div class="item-variant">Style: French Tip</div>
+                                <div class="item-price">$29.99</div>
+                                <div class="item-quantity">Qty: 1</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span>$92.96</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Shipping</span>
+                            <span>20$</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax</span>
+                            <span>$5.00</span>
+                        </div>
+                        <div class="total-row final">
+                            <span>Total</span>
+                            <span>$97.96</span>
+                        </div>
+                    </div>
+                    
+                    <div class="security-badges">
+                        <div class="security-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure Checkout</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BatLuxe Beauty</h3>
+                    <p>Luxury beauty products crafted with precision and passion for the modern woman.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/batluxebeautyuk?igsh=MThxdTV4ZXB2cDd3aw%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@batluxebeautyuk?_r=1&_t=ZN-91Z0W4zfwTW"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                   </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="SHIPPINGANDRETURNS.HTML">Shipping & Returns</a></li>
+                        <li><a href="PRIVACY-POLICY.HTML">Privacy Policy</a></li>
+                        <li><a href="term.condition.html">Terms & Conditions</a></li>
+                        <li><a href="faq-question.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 BatLuxe Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Checkout Steps Navigation
+        const steps = document.querySelectorAll('.step');
+        const formSections = document.querySelectorAll('.form-section');
+        const nextToPaymentBtn = document.getElementById('next-to-payment');
+        const backToShippingBtn = document.getElementById('back-to-shipping');
+        const completeOrderBtn = document.getElementById('complete-order');
+        const shippingSection = document.getElementById('shipping-section');
+        const paymentSection = document.getElementById('payment-section');
+        const confirmationSection = document.getElementById('confirmation-section');
+
+        // Payment Method Selection
+        const paymentMethods = document.querySelectorAll('.payment-method');
+        const cardForm = document.getElementById('card-form');
+
+        paymentMethods.forEach(method => {
+            method.addEventListener('click', () => {
+                paymentMethods.forEach(m => m.classList.remove('active'));
+                method.classList.add('active');
+                
+                // Show card form only if credit card is selected
+                if (method.dataset.method === 'card') {
+                    cardForm.style.display = 'block';
+                } else {
+                    cardForm.style.display = 'none';
+                }
+            });
+        });
+
+        // Next to Payment Button
+        nextToPaymentBtn.addEventListener('click', () => {
+            // Validate shipping form
+            const shippingForm = document.getElementById('shipping-form');
+            if (!shippingForm.checkValidity()) {
+                shippingForm.reportValidity();
+                return;
+            }
+            
+            // Update steps
+            steps[0].classList.remove('active');
+            steps[0].classList.add('completed');
+            steps[1].classList.add('active');
+            
+            // Show payment section
+            shippingSection.classList.remove('active');
+            paymentSection.classList.add('active');
+        });
+
+        // Back to Shipping Button
+        backToShippingBtn.addEventListener('click', () => {
+            // Update steps
+            steps[1].classList.remove('active');
+            steps[0].classList.add('active');
+            steps[0].classList.remove('completed');
+            
+            // Show shipping section
+            paymentSection.classList.remove('active');
+            shippingSection.classList.add('active');
+        });
+
+        // Complete Order Button
+        completeOrderBtn.addEventListener('click', () => {
+            // Validate payment form if credit card is selected
+            const activePayment = document.querySelector('.payment-method.active');
+            if (activePayment.dataset.method === 'card') {
+                const paymentForm = document.getElementById('payment-form');
+                if (!paymentForm.checkValidity()) {
+                    paymentForm.reportValidity();
+                    return;
+                }
+            }
+            
+            // Update steps
+            steps[1].classList.remove('active');
+            steps[1].classList.add('completed');
+            steps[2].classList.add('active');
+            
+            // Show confirmation section
+            paymentSection.classList.remove('active');
+            confirmationSection.classList.add('active');
+            
+            // In a real application, you would process the payment here
+            // and send order confirmation email
+        });
+
+        // Format card number input
+        const cardNumberInput = document.getElementById('cardNumber');
+        cardNumberInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ').substr(0, 19) || value;
+            e.target.value = formattedValue;
+        });
+
+        // Format expiry date input
+        const expiryDateInput = document.getElementById('expiryDate');
+        expiryDateInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value;
+        });
+
+        // Format CVV input
+        const cvvInput = document.getElementById('cvv');
+        cvvInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^0-9]/gi, '').substr(0, 4);
+        });
+    </script>
+</body>
+</html>

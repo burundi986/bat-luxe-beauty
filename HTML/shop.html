@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - BatLuxe Beauty</title>
+    <link rel="stylesheet" href="../CSS/shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Bat<span>Luxe</span> Beauty</a>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- <li><a href="blog.html">Blog</a></li> -->
+                </ul>
+                <div class="nav-icons">
+                    <i class="fas fa-search"></i>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <a href="PROFILE.html">
+                     <i class="fas fa-user"></i>
+                    </a>
+                     <!-- Currency Dropdown -->
+                    <div class="currency-selector">
+                        <button class="currency-btn">
+                            <span class="selected-currency">USD</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="currency-dropdown">
+                            <div class="currency-option active" data-currency="USD" data-rate="1" data-symbol="$">
+                                <span class="currency-flag">🇺🇸</span>
+                                <span class="currency-code">USD</span>
+                                <span class="currency-name">US Dollar</span>
+                            </div>
+                            <div class="currency-option" data-currency="EUR" data-rate="0.85" data-symbol="€">
+                                <span class="currency-flag">🇪🇺</span>
+                                <span class="currency-code">EUR</span>
+                                <span class="currency-name">Euro</span>
+                            </div>
+                            <div class="currency-option" data-currency="GBP" data-rate="0.73" data-symbol="£">
+                                <span class="currency-flag">🇬🇧</span>
+                                <span class="currency-code">GBP</span>
+                                <span class="currency-name">British Pound</span>
+                            </div>
+                            <div class="currency-option" data-currency="CAD" data-rate="1.25" data-symbol="C$">
+                                <span class="currency-flag">🇨🇦</span>
+                                <span class="currency-code">CAD</span>
+                                <span class="currency-name">Canadian Dollar</span>
+                            </div>
+                            <div class="currency-option" data-currency="AUD" data-rate="1.35" data-symbol="A$">
+                                <span class="currency-flag">🇦🇺</span>
+                                <span class="currency-code">AUD</span>
+                                <span class="currency-name">Australian Dollar</span>
+                            </div>
+                            <div class="currency-option" data-currency="NGN" data-rate="1500" data-symbol="₦">
+                                <span class="currency-flag">ng</span>
+                                <span class="currency-code">NGN</span>
+                                <span class="currency-name">Nigeria naira</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop Our Collection</h1>
+            <p>Discover luxury beauty products for the modern woman</p>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop">
+        <div class="container">
+                      
+                <div class="category-filters">
+                    <button class="category-button active">ALL</button>
+                    <button class="category-button">lashes</button>
+                    <button class="category-button">lip gloss</button>
+                    <button class="category-button">lip matte</button>
+                    <button class="category-button">press on nails</button>
+                    <button class="category-button">lip liner</button>
+                </div>     
+                 <div class="products-grid">
+                        <!-- Product 1 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lush Lips Gloss" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lip Gloss</div>
+                            <h3 class="product-name">Lush Lips Gloss - Pink Sparkle</h3>
+                            <div class="product-price" data-original-price="18.99">$18.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="1" data-name="Lush Lips Gloss - Pink Sparkle" data-price="18.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="BatLuxe Feline Lashes" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lashes</div>
+                            <h3 class="product-name">BatLuxe Feline Lashes</h3>
+                            <div class="product-price" data-original-price="24.99">$24.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="2" data-name="BatLuxe Feline Lashes" data-price="24.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                               <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Precision Lip Liner" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lip Liner</div>
+                            <h3 class="product-name">Precision Lip Liner - Nude</h3>
+                            <div class="product-price" data-original-price="14.99">$14.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="3" data-name="Precision Lip Liner - Nude" data-price="14.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Matte Lipstick" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Matte Lipstick</div>
+                            <h3 class="product-name">Velvet Matte Lipstick - Ruby</h3>
+                            <div class="product-price" data-original-price="22.99">$22.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="4" data-name="Velvet Matte Lipstick - Ruby" data-price="22.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Press-on Nails" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Press-on Nails</div>
+                            <h3 class="product-name">Luxury Press-on Nails - French Tip</h3>
+                            <div class="product-price" data-original-price="29.99">$29.99 <span class="old-price">$39.99</span></div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="5" data-name="Luxury Press-on Nails - French Tip" data-price="29.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lip Gloss Set" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lip Gloss</div>
+                            <h3 class="product-name">Lush Lips Gloss Set - 5 Colors</h3>
+                            <div class="product-price" data-original-price="79.99">$79.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="6" data-name="Lush Lips Gloss Set - 5 Colors" data-price="79.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lash Kit" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lashes</div>
+                            <h3 class="product-name">BatLuxe Lash Kit - 5 Styles</h3>
+                            <div class="product-price" data-original-price="49.99">$49.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="7" data-name="BatLuxe Lash Kit - 5 Styles" data-price="49.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lip Liner Set" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lip Liner</div>
+                            <h3 class="product-name">Precision Lip Liner Set - 6 Colors</h3>
+                            <div class="product-price" data-original-price="34.99">$34.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="8" data-name="Precision Lip Liner Set - 6 Colors" data-price="34.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+            <p class="empty-cart-message" id="emptyCartMessage">Your cart is empty</p>
+        </div>
+        
+        
+    </div>
+    <!-- In your cart sidebar (add this to both home and shop pages) -->
+    <div class="cart-summary">
+        <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+            <span>Delivery Fee</span>
+            <span id="deliveryFee">$5.00</span>
+        </div>
+        <div class="summary-row total">
+            <span>Total</span>
+            <span id="total">$0.00</span>
+        </div>
+        <a href="checkoutpage.html"><button class="checkout-btn" id="checkoutBtn" >Proceed to Checkout</button></a>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        Item added to cart successfully!
+    </div>
+    <section class="category-button">
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BatLuxe Beauty</h3>
+                    <p>Luxury beauty products crafted with precision and passion for the modern woman.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/batluxebeautyuk?igsh=MThxdTV4ZXB2cDd3aw%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@batluxebeautyuk?_r=1&_t=ZN-91Z0W4zfwTW"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="SHIPPINGANDRETURNS.HTML">Shipping & Returns</a></li>
+                        <li><a href="PRIVACY-POLICY.HTML">Privacy Policy</a></li>
+                        <li><a href="term.condition.html">Terms & Conditions</a></li>
+                        <li><a href="faq-question.html">FAQ</a></li>
+                        <!-- <li><a href="#">Track Order</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 BatLuxe Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cart elements
+            const cartIcon = document.getElementById('cartIcon');
+            const cartSidebar = document.getElementById('cartSidebar');
+            const closeCart = document.getElementById('closeCart');
+            const overlay = document.getElementById('overlay');
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const emptyCartMessage = document.getElementById('emptyCartMessage');
+            const subtotalElement = document.getElementById('subtotal');
+            const deliveryFeeElement = document.getElementById('deliveryFee');
+            const totalElement = document.getElementById('total');
+            const notification = document.getElementById('notification');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+            
+            // Cart data
+            let cart = [];
+            const deliveryFee = 5.99; // Fixed delivery fee
+            const freeDeliveryThreshold = 50.00; // Free delivery for orders over $50
+            
+            // Event Listeners
+            cartIcon.addEventListener('click', openCart);
+            closeCart.addEventListener('click', closeCartSidebar);
+            overlay.addEventListener('click', closeCartSidebar);
+            
+            // Add to cart buttons
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-id');
+                    const productName = this.getAttribute('data-name');
+                    const productPrice = parseFloat(this.getAttribute('data-price'));
+                    const productImage = this.getAttribute('data-image');
+                    
+                    addToCart(productId, productName, productPrice, productImage);
+                });
+            });
+            
+            // Functions
+            function openCart() {
+                cartSidebar.classList.add('active');
+                overlay.classList.add('active');
+            }
+            
+            function closeCartSidebar() {
+                cartSidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+            
+            function addToCart(id, name, price, image) {
+                // Check if item already exists in cart
+                const existingItemIndex = cart.findIndex(item => item.id === id);
+                
+                if (existingItemIndex !== -1) {
+                    // Update quantity if item already exists
+                    cart[existingItemIndex].quantity += 1;
+                } else {
+                    // Add new item to cart
+                    cart.push({
+                        id: id,
+                        name: name,
+                        price: price,
+                        image: image,
+                        quantity: 1
+                    });
+                }
+                
+                // Update UI
+                updateCartUI();
+                
+                // Show notification
+                showNotification();
+            }
+            
+            function updateCartUI() {
+                // Update cart count
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = totalItems;
+                
+                // Update cart items
+                cartItems.innerHTML = '';
+                
+                if (cart.length === 0) {
+                    emptyCartMessage.style.display = 'block';
+                } else {
+                    emptyCartMessage.style.display = 'none';
+                    
+                    cart.forEach((item, index) => {
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <div class="item-image">
+                                <img src="${item.image}" alt="${item.name}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-name">${item.name}</div>
+                                <div class="item-price">$${item.price.toFixed(2)}</div>
+                                <div class="item-quantity">
+                                    <button class="quantity-btn minus" data-index="${index}">-</button>
+                                    <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-index="${index}">
+                                    <button class="quantity-btn plus" data-index="${index}">+</button>
+                                </div>
+                                <button class="remove-item" data-index="${index}">Remove</button>
+                            </div>
+                        `;
+                        cartItems.appendChild(cartItem);
+                    });
+                    
+                    // Add event listeners to quantity buttons and remove buttons
+                    document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                        btn.addEventListener('click', decreaseQuantity);
+                    });
+                    
+                    document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                        btn.addEventListener('click', increaseQuantity);
+                    });
+                    
+                    document.querySelectorAll('.quantity-input').forEach(input => {
+                        input.addEventListener('change', updateQuantity);
+                    });
+                    
+                    document.querySelectorAll('.remove-item').forEach(btn => {
+                        btn.addEventListener('click', removeItem);
+                    });
+                }
+                
+                // Update cart summary
+                updateCartSummary();
+            }
+            
+            function updateCartSummary() {
+                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                
+                // Calculate delivery fee (free if subtotal is over threshold)
+                const calculatedDeliveryFee = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
+                
+                const total = subtotal + calculatedDeliveryFee;
+                
+                subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                deliveryFeeElement.textContent = calculatedDeliveryFee === 0 ? 'FREE' : `$${calculatedDeliveryFee.toFixed(2)}`;
+                totalElement.textContent = `$${total.toFixed(2)}`;
+            }
+            
+            function decreaseQuantity(e) {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                if (cart[index].quantity > 1) {
+                    cart[index].quantity--;
+                    updateCartUI();
+                }
+            }
+            
+            function increaseQuantity(e) {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                cart[index].quantity++;
+                updateCartUI();
+            }
+            
+            function updateQuantity(e) {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                const newQuantity = parseInt(e.target.value);
+                
+                if (newQuantity > 0) {
+                    cart[index].quantity = newQuantity;
+                    updateCartUI();
+                } else {
+                    // If invalid quantity, reset to previous value
+                    e.target.value = cart[index].quantity;
+                }
+            }
+            
+            function removeItem(e) {
+                const index = parseInt(e.target.getAttribute('data-index'));
+                cart.splice(index, 1);
+                updateCartUI();
+            }
+            
+            function showNotification() {
+                notification.classList.add('active');
+                setTimeout(() => {
+                    notification.classList.remove('active');
+                }, 3000);
+            }
+            
+            // Currency Conversion Functionality
+            const currencyBtn = document.querySelector('.currency-btn');
+            const currencyDropdown = document.querySelector('.currency-dropdown');
+            const currencyOptions = document.querySelectorAll('.currency-option');
+            const selectedCurrency = document.querySelector('.selected-currency');
+            const productPrices = document.querySelectorAll('.product-price');
+            
+            // Toggle dropdown visibility
+            currencyBtn.addEventListener('click', function() {
+                currencyDropdown.classList.toggle('show');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.currency-selector')) {
+                    currencyDropdown.classList.remove('show');
+                }
+            });
+            
+            // Handle currency selection
+            currencyOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const currency = this.getAttribute('data-currency');
+                    const rate = parseFloat(this.getAttribute('data-rate'));
+                    const symbol = this.getAttribute('data-symbol');
+                    
+                    // Update selected currency display
+                    selectedCurrency.textContent = currency;
+                    
+                    // Update active state
+                    currencyOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Convert all prices
+                    convertPrices(rate, symbol);
+                    
+                    // Close dropdown
+                    currencyDropdown.classList.remove('show');
+                });
+            });
+            
+            // Function to convert prices
+            function convertPrices(rate, symbol) {
+                productPrices.forEach(priceElement => {
+                    const originalPrice = parseFloat(priceElement.getAttribute('data-original-price'));
+                    const convertedPrice = (originalPrice * rate).toFixed(2);
+                    
+                    // Check if there's an old price (for sale items)
+                    const oldPriceElement = priceElement.querySelector('.old-price');
+                    if (oldPriceElement) {
+                        const oldOriginalPrice = parseFloat(oldPriceElement.textContent.replace('$', ''));
+                        const oldConvertedPrice = (oldOriginalPrice * rate).toFixed(2);
+                        priceElement.innerHTML = `${symbol}${convertedPrice} <span class="old-price">${symbol}${oldConvertedPrice}</span>`;
+                    } else {
+                        priceElement.textContent = `${symbol}${convertedPrice}`;
+                    }
+                });
+            }
+            
+            // Mobile Navigation Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Wishlist Toggle
+            const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+            
+            wishlistButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const icon = button.querySelector('i');
+                    button.classList.toggle('active');
+                    
+                    if (button.classList.contains('active')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                    }
+                });
+            });
+        });
+        // Add this to your existing JavaScript on both home and shop pages
+
+            // Checkout functionality
+            // const checkoutBtn = document.getElementById('checkoutBtn');
+
+            checkoutBtn.addEventListener('click', function() {
+                // Check if cart is empty
+                if (cart.length === 0) {
+                    showNotification('Your cart is empty! Add some products first.', 'error');
+                    return;
+                }
+                
+                // Prepare checkout data
+                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                const calculatedDeliveryFee = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
+                const total = subtotal + calculatedDeliveryFee;
+                
+                const checkoutData = {
+                    items: cart,
+                    subtotal: subtotal,
+                    deliveryFee: calculatedDeliveryFee,
+                    total: total,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Store checkout data in localStorage
+                localStorage.setItem('batluxe_checkout_data', JSON.stringify(checkoutData));
+                
+                // Redirect to checkout page
+                window.location.href = 'checkoutpage.html';
+            });
+            // Add this to your existing JavaScript on both home and shop pages
+
+        // Checkout functionality
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        checkoutBtn.addEventListener('click', function(e) {
+            // Prevent default link behavior
+            e.preventDefault();
+            
+            // Check if cart is empty
+            if (cart.length === 0) {
+                showNotification('Your cart is empty! Add some products first.', 'error');
+                return;
+            }
+            
+            // Prepare checkout data
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const calculatedDeliveryFee = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
+            const total = subtotal + calculatedDeliveryFee;
+            
+            const checkoutData = {
+                items: cart,
+                subtotal: subtotal,
+                deliveryFee: calculatedDeliveryFee,
+                total: total,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Store checkout data in localStorage
+            localStorage.setItem('batluxe_checkout_data', JSON.stringify(checkoutData));
+            
+            // Redirect to checkout page
+            window.location.href = 'checkoutpage.html';
+        });
+
+        // Enhanced notification function
+        function showNotification(message = 'Item added to cart successfully!', type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            
+            // Reset classes
+            notification.className = 'notification';
+            
+            // Add type class
+            notification.classList.add(type);
+            notification.classList.add('active');
+            
+            setTimeout(() => {
+                notification.classList.remove('active');
+            }, 3000);
+        }
+    // Add this to your existing cart JavaScript
+
+    // Checkout functionality
+    // const checkoutBtn = document.getElementById('checkoutBtn');
+
+    // checkoutBtn.addEventListener('click', function() {
+    //     // Check if cart is empty
+    //     if (cart.length === 0) {
+    //         showNotification('Your cart is empty! Add some products first.', 'error');
+    //         return;
+    //     }
+        
+    //     // Save cart data to localStorage
+    //     localStorage.setItem('batluxe_cart', JSON.stringify(cart));
+        
+    //     // Calculate and save totals
+    //     const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+    //     const calculatedDeliveryFee = subtotal >= 50 ? 0 : 5.99;
+        
+    //     localStorage.setItem('batluxe_subtotal', subtotal.toFixed(2));
+    //     localStorage.setItem('batluxe_delivery', calculatedDeliveryFee.toFixed(2));
+    //     localStorage.setItem('batluxe_total', (subtotal + calculatedDeliveryFee).toFixed(2));
+        
+    //     // Redirect to checkout
+    //     window.location.href = 'checkout.html';
+    // });
+     // Add this to your existing JavaScript in the shop page
+   // Checkout functionality
+
+  checkoutBtn.addEventListener('click', function(e) {
+    // Prevent default link behavior
+    e.preventDefault();
+    
+    // Check if cart is empty
+    if (cart.length === 0) {
+        alert('Your cart is empty! Add some products first.');
+        return;
+    }
+    
+    // Prepare checkout data
+    const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+    const calculatedDeliveryFee = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
+    const total = subtotal + calculatedDeliveryFee;
+    
+    // Store cart data in localStorage
+    localStorage.setItem('batluxe_cart', JSON.stringify(cart));
+    localStorage.setItem('batluxe_subtotal', subtotal.toFixed(2));
+    localStorage.setItem('batluxe_delivery', calculatedDeliveryFee.toFixed(2));
+    localStorage.setItem('batluxe_total', total.toFixed(2));
+    
+    // Redirect to checkout page
+    window.location.href = 'checkoutpage.html';
+ });
+   </script>
+</body>
+</html>
