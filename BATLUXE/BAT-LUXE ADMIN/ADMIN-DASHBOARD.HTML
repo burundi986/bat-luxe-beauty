@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BatLuxe Beauty</title>
+     <link rel="stylesheet" href="../CSS/admindashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-icon">
+            <i class="fas fa-bell"></i>
+        </div>
+        <div class="notification-content">
+            <div class="notification-title">New Order Received!</div>
+            <div class="notification-message" id="notificationMessage"></div>
+        </div>
+    </div>
+
+    <div class="admin-container">
+        <!-- Admin Sidebar -->
+        <div class="admin-sidebar" id="adminSidebar">
+            <div class="admin-brand">
+                <h1>BatLuxe Beauty</h1>
+                <p>Admin Dashboard</p>
+            </div>
+            
+            <div class="admin-menu">
+                <div class="menu-item active" data-target="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </div>
+                
+                <div class="menu-section">Products</div>
+                
+                <div class="menu-item" data-target="products">
+                    <i class="fas fa-cube"></i>
+                    <span>All Products</span>
+                </div>
+                <div class="menu-item" data-target="add-product">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Product</span>
+                </div>
+                <div class="menu-section">Sales</div>
+                
+                <div class="menu-item" data-target="orders">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Orders</span>
+                </div>
+                <div class="menu-item" data-target="customers">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                </div>
+    
+            </div>
+        </div>
+        
+        <!-- Admin Main Content -->
+        <div class="admin-main">
+            <div class="admin-header">
+                <div class="admin-title">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back, Admin! Here's what's happening with your store today.</p>
+                </div>
+                
+                <div class="admin-actions">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <div class="admin-user">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div>
+                            <div>Admin User</div>
+                            <div style="font-size: 0.8rem; color: #777;">Administrator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dashboard Section -->
+            <div class="content-section active" id="dashboard">
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon icon-revenue">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalRevenue">$12,458</h3>
+                            <p>Total Revenue</p>
+                            <div class="stat-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>12.5% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon icon-orders">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalOrders">148</h3>
+                            <p>Total Orders</p>
+                            <div class="stat-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>8.2% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon icon-customers">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalCustomers">892</h3>
+                            <p>Total Customers</p>
+                            <div class="stat-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>5.7% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon icon-products">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalProducts">42</h3>
+                            <p>Total Products</p>
+                            <div class="stat-trend trend-down">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>2.3% from last month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Orders -->
+                <div class="recent-orders">
+                    <div class="section-title">
+                        <h2>Recent Orders</h2>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTableBody">
+                                <!-- Orders will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Products Section -->
+            <div class="content-section" id="products">
+                <div class="section-title">
+                    <h2>Product Management</h2>
+                    <p>Manage your product catalog</p>
+                </div>
+                
+                <div class="admin-actions" style="margin-bottom: 30px;">
+                    <button class="btn" id="addProductBtn">
+                        <i class="fas fa-plus"></i> Add New Product
+                    </button>
+                    <div style="flex: 1;"></div>
+                    <div class="form-control" style="width: 300px;">
+                        <input type="text" placeholder="Search products...">
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be dynamically added here -->
+                </div>
+            </div>
+            
+            <!-- Add Product Section -->
+            <div class="content-section" id="add-product">
+                <div class="section-title">
+                    <h2>Add New Product</h2>
+                    <p>Add a new product to your catalog</p>
+                </div>
+                
+                <div class="form-section">
+                    <form id="addProductForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="productName">Product Name</label>
+                                <input type="text" id="productName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="productSku">SKU</label>
+                                <input type="text" id="productSku" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="productCategory">Category</label>
+                                <select id="productCategory" class="form-control" required>
+                                    <option value="">Select Category</option>
+                                    <option value="lipgloss">Lip Gloss</option>
+                                    <option value="lipliners">Lip Liners</option>
+                                    <option value="mattelipsticks">Matte Lipsticks</option>
+                                    <option value="lashes">Lashes</option>
+                                    <option value="nails">Press-on Nails</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="productPrice">Price ($)</label>
+                                <input type="number" id="productPrice" class="form-control" step="0.01" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="productStock">Stock Quantity</label>
+                                <input type="number" id="productStock" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="productStatus">Status</label>
+                                <select id="productStatus" class="form-control" required>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="draft">Draft</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productDescription">Product Description</label>
+                            <textarea id="productDescription" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productImages">Product Images</label>
+                            <input type="file" id="productImages" class="form-control" multiple>
+                            <div style="margin-top: 10px; font-size: 0.9rem; color: #777;">
+                                You can upload up to 5 images. The first image will be used as the main product image.
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn">Add Product</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Orders Section -->
+            <div class="content-section" id="orders">
+                <div class="section-title">
+                    <h2>Order Management</h2>
+                    <p>View and manage customer orders</p>
+                </div>
+                
+                <div class="recent-orders">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="allOrdersTableBody">
+                                <!-- All orders will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Product Modal -->
+    <div class="modal" id="addProductModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Product</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="modalProductForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="modalProductName">Product Name</label>
+                            <input type="text" id="modalProductName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalProductSku">SKU</label>
+                            <input type="text" id="modalProductSku" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="modalProductCategory">Category</label>
+                            <select id="modalProductCategory" class="form-control" required>
+                                <option value="">Select Category</option>
+                                <option value="lipgloss">Lip Gloss</option>
+                                <option value="lipliners">Lip Liners</option>
+                                <option value="mattelipsticks">Matte Lipsticks</option>
+                                <option value="lashes">Lashes</option>
+                                <option value="nails">Press-on Nails</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalProductPrice">Price ($)</label>
+                            <input type="number" id="modalProductPrice" class="form-control" step="0.01" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="modalProductDescription">Product Description</label>
+                        <textarea id="modalProductDescription" class="form-control" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelProduct">Cancel</button>
+                <button class="btn" id="saveProduct">Save Product</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div class="modal" id="editProductModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Product</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editProductForm">
+                    <input type="hidden" id="editProductId">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editProductName">Product Name</label>
+                            <input type="text" id="editProductName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProductSku">SKU</label>
+                            <input type="text" id="editProductSku" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editProductCategory">Category</label>
+                            <select id="editProductCategory" class="form-control" required>
+                                <option value="">Select Category</option>
+                                <option value="lipgloss">Lip Gloss</option>
+                                <option value="lipliners">Lip Liners</option>
+                                <option value="mattelipsticks">Matte Lipsticks</option>
+                                <option value="lashes">Lashes</option>
+                                <option value="nails">Press-on Nails</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProductPrice">Price ($)</label>
+                            <input type="number" id="editProductPrice" class="form-control" step="0.01" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editProductStock">Stock Quantity</label>
+                            <input type="number" id="editProductStock" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editProductStatus">Status</label>
+                            <select id="editProductStatus" class="form-control" required>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="draft">Draft</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="editProductDescription">Product Description</label>
+                        <textarea id="editProductDescription" class="form-control" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelEditProduct">Cancel</button>
+                <button class="btn" id="updateProduct">Update Product</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div class="modal" id="orderDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Order Details</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="order-details">
+                    <div class="order-customer">
+                        <div>
+                            <h4 id="orderCustomerName"></h4>
+                            <p id="orderCustomerEmail"></p>
+                            <p id="orderCustomerPhone"></p>
+                        </div>
+                        <div>
+                            <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+                            <p><strong>Date:</strong> <span id="orderDate"></span></p>
+                            <p><strong>Status:</strong> <span id="orderStatus"></span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="order-items" id="orderItems">
+                        <!-- Order items will be dynamically added here -->
+                    </div>
+                    
+                    <div class="order-total">
+                        <span>Total:</span>
+                        <span id="orderTotal"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderStatusSelect">Update Status</label>
+                    <select id="orderStatusSelect" class="form-control">
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="delivered">Delivered</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="closeOrderDetails">Close</button>
+                <button class="btn" id="updateOrderStatus">Update Status</button>
+            </div>
+        </div>
+    </div>
+  
+</body>
+</html>
+  

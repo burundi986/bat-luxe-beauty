@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - LIP Gloss</title>
+    <script src="../JAVA SCRIPT/SHOP.JS"></script>
+    <link rel="stylesheet" href="../CSS/shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Bat<span>Luxe</span> Beauty</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- <li><a href="blog.html">Blog</a></li> -->
+                </ul>
+                <div class="nav-icons">
+                    <i class="fas fa-search"></i>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <a href="PROFILE.html">
+                     <i class="fas fa-user"></i>
+                    </a>
+                     <!-- Currency Dropdown -->
+                    <div class="currency-selector">
+                        <button class="currency-btn">
+                            <span class="selected-currency">USD</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="currency-dropdown">
+                            <div class="currency-option active" data-currency="USD" data-rate="1" data-symbol="$">
+                                <span class="currency-flag">🇺🇸</span>
+                                <span class="currency-code">USD</span>
+                                <span class="currency-name">US Dollar</span>
+                            </div>
+                            <div class="currency-option" data-currency="EUR" data-rate="0.85" data-symbol="€">
+                                <span class="currency-flag">🇪🇺</span>
+                                <span class="currency-code">EUR</span>
+                                <span class="currency-name">Euro</span>
+                            </div>
+                            <div class="currency-option" data-currency="GBP" data-rate="0.73" data-symbol="£">
+                                <span class="currency-flag">🇬🇧</span>
+                                <span class="currency-code">GBP</span>
+                                <span class="currency-name">British Pound</span>
+                            </div>
+                            <div class="currency-option" data-currency="CAD" data-rate="1.25" data-symbol="C$">
+                                <span class="currency-flag">🇨🇦</span>
+                                <span class="currency-code">CAD</span>
+                                <span class="currency-name">Canadian Dollar</span>
+                            </div>
+                            <div class="currency-option" data-currency="AUD" data-rate="1.35" data-symbol="A$">
+                                <span class="currency-flag">🇦🇺</span>
+                                <span class="currency-code">AUD</span>
+                                <span class="currency-name">Australian Dollar</span>
+                            </div>
+                            <div class="currency-option" data-currency="NGN" data-rate="1500" data-symbol="₦">
+                                <span class="currency-flag">ng</span>
+                                <span class="currency-code">NGN</span>
+                                <span class="currency-name">Nigeria naira</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop Our Collection</h1>
+            <p>Discover luxury beauty products for the modern woman</p>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop">
+        <div class="container">
+                      
+                <div class="category-filters">
+                    <button class="category-button ">ALL</button>
+                    <a href="LASHES.HTML"><button class="category-button">lashes</button></a>
+                    <a href="lip gloss.html"><button class="category-button active">lip gloss</button></a>
+                    <a href="lip matte.html"><button class="category-button">lip matte</button></a>
+                    <a href="press on nails.html"><button class="category-button">press on nails</button></a>
+                    <a href="lip-liner.html"><button class="category-button">lip liner</button></a>
+                </div>     
+                 <div class="products-grid">
+                        <!-- Product 1 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lush Lips Gloss" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lip Gloss</div>
+                            <h3 class="product-name">Lush Lips Gloss - Pink Sparkle</h3>
+                            <div class="product-price" data-original-price="18.99">$18.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="1" data-name="Lush Lips Gloss - Pink Sparkle" data-price="18.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="BatLuxe Feline Lashes" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">LIP Gloss</div>
+                            <h3 class="product-name">LIP Gloss</h3>
+                            <div class="product-price" data-original-price="24.99">$24.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="2" data-name="BatLuxe Feline Lashes" data-price="24.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                               <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Precision Lip Liner" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lip Liner</div>
+                            <h3 class="product-name">LIP GLOSS</h3>
+                            <div class="product-price" data-original-price="14.99">$14.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="3" data-name="Precision Lip Liner - Nude" data-price="14.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Matte Lipstick" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Matte Lipstick</div>
+                            <h3 class="product-name">Velvet Matte Lipstick - Ruby</h3>
+                            <div class="product-price" data-original-price="22.99">$22.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="4" data-name="Velvet Matte Lipstick - Ruby" data-price="22.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Press-on Nails" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Press-on Nails</div>
+                            <h3 class="product-name">Luxury Press-on Nails - French Tip</h3>
+                            <div class="product-price" data-original-price="29.99">$29.99 <span class="old-price">$39.99</span></div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="5" data-name="Luxury Press-on Nails - French Tip" data-price="29.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lip Gloss Set" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lip Gloss</div>
+                            <h3 class="product-name">Lush Lips Gloss Set - 5 Colors</h3>
+                            <div class="product-price" data-original-price="79.99">$79.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="6" data-name="Lush Lips Gloss Set - 5 Colors" data-price="79.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lash Kit" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lashes</div>
+                            <h3 class="product-name">BatLuxe Lash Kit - 5 Styles</h3>
+                            <div class="product-price" data-original-price="49.99">$49.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="7" data-name="BatLuxe Lash Kit - 5 Styles" data-price="49.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lip Liner Set" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Lip Liner</div>
+                            <h3 class="product-name">Precision Lip Liner Set - 6 Colors</h3>
+                            <div class="product-price" data-original-price="34.99">$34.99</div>
+                            <div class="product-actions">
+                                <button class="btn add-to-cart-btn" data-id="8" data-name="Precision Lip Liner Set - 6 Colors" data-price="34.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div> 
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+            <p class="empty-cart-message" id="emptyCartMessage">Your cart is empty</p>
+        </div>
+        
+        
+    </div>
+    <!-- In your cart sidebar (add this to both home and shop pages) -->
+    <div class="cart-summary">
+        <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+            <span>Delivery Fee</span>
+            <span id="deliveryFee">$5.00</span>
+        </div>
+        <div class="summary-row total">
+            <span>Total</span>
+            <span id="total">$0.00</span>
+        </div>
+        <a href="checkoutpage.html"><button class="checkout-btn" id="checkoutBtn" >Proceed to Checkout</button></a>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        Item added to cart successfully!
+    </div>
+    <section class="category-button">
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BatLuxe Beauty</h3>
+                    <p>Luxury beauty products crafted with precision and passion for the modern woman.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/batluxebeautyuk?igsh=MThxdTV4ZXB2cDd3aw%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@batluxebeautyuk?_r=1&_t=ZN-91Z0W4zfwTW"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="SHIPPINGANDRETURNS.HTML">Shipping & Returns</a></li>
+                        <li><a href="PRIVACY-POLICY.HTML">Privacy Policy</a></li>
+                        <li><a href="term.condition.html">Terms & Conditions</a></li>
+                        <li><a href="faq-question.html">FAQ</a></li>
+                        <!-- <li><a href="#">Track Order</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 BatLuxe Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

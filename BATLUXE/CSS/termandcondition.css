@@ -1,0 +1,47 @@
+ :root {
+    --primary-pink: #f8c8dc;
+    --dark-pink: #e75480;
+    --light-pink: #fdf2f8;
+    --gold: #d4af37;
+    --white: #ffffff;
+    --black: #333333;
+    --nude: #f5e6d3;
+    --transition: all 0.3s ease;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-pink);
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px 30px;
+            background-color: var(--light-pink);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: var(--light-pink);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        a {
+            color: var(--primary-pink);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            margin-bottom: 15px;
+        }

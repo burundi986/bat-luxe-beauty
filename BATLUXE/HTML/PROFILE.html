@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - BatLuxe Beauty</title>
+    <script src="../JAVA SCRIPT/PROFILE.JS"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/PROFILE.CSS">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Bat<span>Luxe</span> Beauty</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <!-- <i class="fas fa-search"></i> -->
+                    <!-- <i class="fas fa-shopping-bag"></i> -->
+                    <i class="fas fa-user"></i>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>My Account</h1>
+            <p>Manage your BatLuxe Beauty experience</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+        <div class="container">
+            <div class="dashboard-container">
+                <!-- Dashboard Sidebar -->
+                <div class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-name">Basit yusuf</div>
+                        <div class="user-email">Basityusuf365@gmail.com</div>
+                    </div>
+
+                    <div class="dashboard-menu">
+                        <div class="menu-item active" data-target="overview">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </div>
+                        <div class="menu-item" data-target="orders">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>My Orders</span>
+                        </div>
+
+                        <div class="menu-item" data-target="addresses">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Addresses</span>
+                        </div>
+                        <div class="menu-item" data-target="settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Account Settings</span>
+                        </div>
+                    </div>
+
+                    <button class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Log Out</span>
+                    </button>
+                </div>
+
+                <!-- Dashboard Content -->
+                <div class="dashboard-content">
+                    <!-- Overview Section -->
+                    <div class="content-section active" id="overview">
+                        <div class="content-header">
+                            <h2>Dashboard Overview</h2>
+                            <div>Welcome back, basit!</div>
+                        </div>
+
+                        <div class="stats-cards">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                                <div class="stat-number">5</div>
+                                <div class="stat-label">Total Orders</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div> 
+                                 <div class="stat-number">12</div>
+                                <div class="stat-label">Wishlist Items</div>
+                            </div> 
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-star"></i>
+                                <!-- </div>
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Reviews Posted</div> -->
+                            </div> 
+                             <!-- <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-tag"></i>
+                                </div>
+                                <div class="stat-number">2</div>
+                                <div class="stat-label">Active Coupons</div>
+                            </div> -->
+                        </div> 
+
+                        <div class="recent-activity">
+                            <h3 class="activity-title">Recent Activity</h3>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Order Placed</h4>
+                                    <p>Order #BLX-2023-5876 placed on October 15, 2025</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Order Shipped</h4>
+                                    <p>Order #BLX-2025-5421 shipped on October 12, 2025</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Item Added to Wishlist</h4>
+                                    <p>Lush Lips Gloss - Pink Sparkle added on October 10, 2025</p>
+                                </div>
+                            </div>
+                            <!-- <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <h4>Review Posted</h4>
+                                    <p>You reviewed BatLuxe Feline Lashes on October 8, 2023</p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div> 
+
+                    <!-- Orders Section -->
+                    <div class="content-section" id="orders">
+                        <div class="content-header">
+                            <h2>My Orders</h2>
+                            <div>View and track your orders</div>
+                        </div>
+
+                        <div class="orders-list">
+                            <!-- Order 1 -->
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div>
+                                        <div class="order-id">Order #BLX-2026-5876</div>
+                                        <div class="order-date">Placed on October 15, 2026</div>
+                                    </div>
+                                    <div class="order-status status-processing">Processing</div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <div class="item-image">
+                                            <img src="https://images.unsplash.com/photo-1583494939362-4c6b63b29e76?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="BatLuxe Feline Lashes">
+                                        </div>
+                                        <div class="item-name">BatLuxe Feline Lashes</div>
+                                    </div>
+                                    <div class="order-item">
+                                        <div class="item-image">
+                                            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lush Lips Gloss">
+                                        </div>
+                                        <div class="item-name">Lush Lips Gloss</div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">Total: $43.98</div>
+                                    <a href="#" class="btn btn-small">View Details</a>
+                                </div>
+                            </div>
+
+                            <!-- Order 2 -->
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div>
+                                        <div class="order-id">Order #BLX-2026-5421</div>
+                                        <div class="order-date">Placed on October 5, 2026</div>
+                                    </div>
+                                    <div class="order-status status-shipped">Shipped</div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <div class="item-image">
+                                            <img src="https://images.unsplash.com/photo-1604658244477-623b31c87fd5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Press-on Nails">
+                                        </div>
+                                        <div class="item-name">Luxury Press-on Nails</div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">Total: $29.99</div>
+                                    <a href="#" class="btn btn-small">Track Order</a>
+                                </div>
+                            </div>
+
+                            <!-- Order 3 -->
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div>
+                                        <div class="order-id">Order #BLX-2026-4987</div>
+                                        <div class="order-date">Placed on September 28, 2026</div>
+                                    </div>
+                                    <div class="order-status status-delivered">Delivered</div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <div class="item-image">
+                                            <img src="https://images.unsplash.com/photo-1583494939362-4c6b63b29e76?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="BatLuxe Feline Lashes">
+                                        </div>
+                                        <div class="item-name">BatLuxe Feline Lashes</div>
+                                    </div>
+                                    <div class="order-item">
+                                        <div class="item-image">
+                                            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lush Lips Gloss">
+                                        </div>
+                                        <div class="item-name">Lush Lips Gloss</div>
+                                    </div>
+                                    <div class="order-item">
+                                        <div class="item-image">
+                                            <img src="https://images.unsplash.com/photo-1604658244477-623b31c87fd5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Press-on Nails">
+                                        </div>
+                                        <div class="item-name">Luxury Press-on Nails</div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">Total: $97.96</div>
+                                    <a href="#" class="btn btn-small">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Addresses Section -->
+                    <div class="content-section" id="addresses">
+                        <div class="content-header">
+                            <h2>My Addresses</h2>
+                            <a href="#" class="btn">Add New Address</a>
+                        </div>
+
+                        <div class="addresses-grid">
+                            <!-- Address 1 -->
+                            <div class="address-card">
+                                <div class="address-type">Primary Address</div>
+                                <div class="address-details">
+                                    <p>Jessica Parker</p>
+                                    <p>123 Beauty Avenue</p>
+                                    <p>Los Angeles, CA 90210</p>
+                                    <p>United States</p>
+                                    <p>Phone: +1 (555) 123-4567</p>
+                                </div>
+                                <div class="address-actions">
+                                    <a href="#" class="btn btn-small">Edit</a>
+                                    <button class="btn btn-small btn-outline">Remove</button>
+                                </div>
+                            </div>
+
+                            <!-- Address 2 -->
+                            <div class="address-card">
+                                <div class="address-type">Work Address</div>
+                                <div class="address-details">
+                                    <p>basit yusuf</p>
+                                    <p>456 Glamour Street, Suite 200</p>
+                                    <p>Beverly Hills, CA 90210</p>
+                                    <p>United Kingdom</p>
+                                    <p>Phone: +1 (555) 987-6543</p>
+                                </div>
+                                <div class="address-actions">
+                                    <a href="#" class="btn btn-small">Edit</a>
+                                    <button class="btn btn-small btn-outline">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Section -->
+                    <div class="content-section" id="settings">
+                        <div class="content-header">
+                            <h2>Account Settings</h2>
+                            <div>Manage your account preferences</div>
+                        </div>
+
+                        <form class="settings-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" class="form-control" value="basit">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" class="form-control" value="yusuf">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" value="basit@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" value="+1 (555) 123-4567">
+                            </div>
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" class="form-control" placeholder="Enter current password">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="newPassword">New Password</label>
+                                    <input type="password" id="newPassword" class="form-control" placeholder="Enter new password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm Password</label>
+                                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm new password">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn">Save Changes</button>
+                        </form>
+
+                        <div class="notification-settings">
+                            <h3>Notification Preferences</h3>
+                            <div class="notification-item">
+                                <span>Email notifications</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-item">
+                                <span>SMS notifications</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-item">
+                                <span>Order updates</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-item">
+                                <span>Promotional offers</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-item">
+                                <span>New product announcements</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BatLuxe Beauty</h3>
+                    <p>Luxury beauty products crafted with precision and passion for the modern woman.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/batluxebeautyuk?igsh=MThxdTV4ZXB2cDd3aw%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@batluxebeautyuk?_r=1&_t=ZN-91Z0W4zfwTW"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="SHIPPINGANDRETURNS.HTML">Shipping & Returns</a></li>
+                        <li><a href="PRIVACY-POLICY.HTML">Privacy Policy</a></li>
+                        <li><a href="term.condition.html">Terms & Conditions</a></li>
+                        <li><a href="faq-question.html">FAQ</a></li>
+                        <!-- <li><a href="#">Track Order</a></li> -->
+                    </ul>
+                </div>
+
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 BatLuxe Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

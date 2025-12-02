@@ -1,0 +1,30 @@
+details {
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::marker {
+    display: none; /* hide default arrow */
+  }
+
+  details[open] {
+    background: #fff;
+    border-color: #aaa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  details p, details ul {
+    margin: 0.5em 0 0;
+    font-size: 0.95em;
+    color: #333;
+  }
