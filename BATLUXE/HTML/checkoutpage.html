@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - BatLuxe Beauty</title>
-    <script src="../JAVA SCRIPT/check-outpage.js"></script>
+    <script src="../js/check-outpage.js" defer></script>
     <link rel="stylesheet" href="../CSS/CHECKOUT.CSS">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -121,95 +121,11 @@
                             </div>
                             <div class="form-navigation">
                                 <button type="button" class="btn btn-secondary" >Back</button>
-                                <button type="button" class="btn" id="next-to-payment">Continue to Payment</button>
+                                <a href="payment.html"><button type="button" id="next-to-payment" class="btn">Continue to Payment</button></a>
                             </div>
                         </form>
                     </div>
-
-                    <!-- Payment Information -->
-                    <div class="form-section" id="payment-section">
-                        <h2>Payment Method</h2>
-                        <div class="payment-methods">
-                            <div class="payment-method active" data-method="card">
-                                <div class="payment-icon">
-                                    <i class="far fa-credit-card"></i>
-                                </div>
-                                <p>Credit Card</p>
-                            </div>
-                            <div class="payment-method" data-method="paypal">
-                                <div class="payment-icon">
-                                    <i class="fab fa-paypal"></i>
-                                </div>
-                                <p>PayPal</p>
-                            </div>
-                            <div class="payment-method" data-method="apple">
-                                <div class="payment-icon">
-                                    <i class="fab fa-apple"></i>
-                                </div>
-                                <p>Apple Pay</p>
-                            </div>
-                            <div class="payment-method" data-method="google">
-                                <div class="payment-icon">
-                                    <i class="fab fa-google"></i>
-                                </div>
-                                <p>Google Pay</p>
-                            </div>
-                            <div class="payment-method" data-method="google">
-                                <div class="payment-icon">
-                                    <i class="fab fa-stripe"></i>
-                                </div>
-                                <p>stripe</p>
-                            </div>
-                        </div>
-
-                        <!-- Card Payment Form -->
-                        <div class="card-form" id="card-form">
-                            <form id="payment-form">
-                                <div class="form-group">
-                                    <label for="cardNumber">Card Number</label>
-                                    <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="expiryDate">Expiry Date</label>
-                                        <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cvv">CVV</label>
-                                        <input type="text" id="cvv" class="form-control" placeholder="123" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cardName">Name on Card</label>
-                                    <input type="text" id="cardName" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        <input type="checkbox" id="saveCard"> Save card for future purchases
-                                    </label>
-                                </div>
-                            </form>
-                        </div>
-
-                        <!-- Security Badges -->
-                        <div class="security-badges">
-                            <div class="security-badge">
-                                <i class="fas fa-lock"></i>
-                                <span>Secure Payment</span>
-                            </div>
-                            <div class="security-badge">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>SSL Encrypted</span>
-                            </div>
-                        </div>
-
-                        <div class="form-navigation">
-                            <button type="button" class="btn btn-secondary" id="back-to-shipping">Back</button>
-                            <button type="button" class="btn" id="complete-order">Complete Order</button>
-                        </div>
-                    </div>
-
-                    <!-- Order Confirmation -->
+                              <!-- Order Confirmation -->
                     <div class="order-confirmation" id="confirmation-section">
                         <div class="confirmation-icon">
                             <i class="fas fa-check-circle"></i>
@@ -244,8 +160,8 @@
                             <a href="#" class="btn btn-secondary">Track Order</a>
                         </div>
                     </div>
-                </div>
-
+                 </div>
+                
                 <!-- Order Summary -->
                 <div class="order-summary">
                     <h2>Order Summary</h2>
@@ -318,8 +234,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -357,4 +271,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html> -->

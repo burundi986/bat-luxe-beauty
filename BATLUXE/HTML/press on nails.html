@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - BatLuxe Beauty</title>
+    <title>Shop - Press on Nails | BatLuxe Beauty</title>
     <script src="../JAVA SCRIPT/SHOP.JS"></script>
     <link rel="stylesheet" href="../CSS/shop.css">
     <link rel="stylesheet" href="../CSS/press on nails.css">
@@ -18,61 +18,75 @@
                 <a href="index.html" class="logo">Bat<span>Luxe</span> Beauty</a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="shop.html">Shop</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <!-- <li><a href="blog.html">Blog</a></li> -->
                 </ul>
-                <div class="nav-icons">
-                    <i class="fas fa-search"></i>
-                    <div class="cart-icon" id="cartIcon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cartCount">0</span>
-                    </div>
-                    <a href="PROFILE.html">
-                     <i class="fas fa-user"></i>
-                    </a>
-                     <!-- Currency Dropdown -->
-                    <div class="currency-selector">
-                        <button class="currency-btn">
-                            <span class="selected-currency">GBP</span>
-                            <i class="fas fa-chevron-down"></i>
+                
+                <div class="header-controls">
+                    <!-- Search Bar (Visible and aligned) -->
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off">
+                        <button class="search-btn" id="searchBtn">
+                            <i class="fas fa-search"></i>
                         </button>
-                        <div class="currency-dropdown">
-                           <div class="currency-option active" data-currency="GBP" data-rate="1" data-symbol="£">
-                                <span class="currency-flag">🇬🇧</span>
-                                <span class="currency-code">GBP</span>
-                                <span class="currency-name">British Pound</span>
-                            </div>
-                            <div class="currency-option " data-currency="USD" data-rate="0.73" data-symbol="$">
-                                <span class="currency-flag">🇺🇸</span>
-                                <span class="currency-code">USD</span>
-                                <span class="currency-name">US Dollar</span>
-                            </div>
-                            <div class="currency-option" data-currency="EUR" data-rate="0.85" data-symbol="€">
-                                <span class="currency-flag">🇪🇺</span>
-                                <span class="currency-code">EUR</span>
-                                <span class="currency-name">Euro</span>
-                            </div>
-                            <div class="currency-option" data-currency="CAD" data-rate="1.25" data-symbol="C$">
-                                <span class="currency-flag">🇨🇦</span>
-                                <span class="currency-code">CAD</span>
-                                <span class="currency-name">Canadian Dollar</span>
-                            </div>
-                            <div class="currency-option" data-currency="AUD" data-rate="1.35" data-symbol="A$">
-                                <span class="currency-flag">🇦🇺</span>
-                                <span class="currency-code">AUD</span>
-                                <span class="currency-name">Australian Dollar</span>
-                            </div>
-                            <div class="currency-option" data-currency="NGN" data-rate="2000" data-symbol="₦">
-                                <span class="currency-flag">ng</span>
-                                <span class="currency-code">NGN</span>
-                                <span class="currency-name">Nigeria naira</span>
+                    </div>
+                    
+                    <div class="nav-icons">
+                        <!-- Cart Icon -->
+                        <div class="cart-icon" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </div>
+                        
+                        <!-- User Icon -->
+                        <a href="PROFILE.html" class="user-icon">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        
+                        <!-- Currency Dropdown (GBP as default) -->
+                        <div class="currency-selector">
+                            <button class="currency-btn">
+                                <span class="selected-currency">GBP</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="currency-dropdown">
+                                <div class="currency-option active" data-currency="GBP" data-rate="1" data-symbol="£">
+                                    <span class="currency-flag">🇬🇧</span>
+                                    <span class="currency-code">GBP</span>
+                                    <span class="currency-name">British Pound</span>
+                                </div>
+                                <div class="currency-option" data-currency="USD" data-rate="1.31" data-symbol="$">
+                                    <span class="currency-flag">🇺🇸</span>
+                                    <span class="currency-code">USD</span>
+                                    <span class="currency-name">US Dollar</span>
+                                </div>
+                                <div class="currency-option" data-currency="EUR" data-rate="1.18" data-symbol="€">
+                                    <span class="currency-flag">🇪🇺</span>
+                                    <span class="currency-code">EUR</span>
+                                    <span class="currency-name">Euro</span>
+                                </div>
+                                <div class="currency-option" data-currency="CAD" data-rate="1.72" data-symbol="C$">
+                                    <span class="currency-flag">🇨🇦</span>
+                                    <span class="currency-code">CAD</span>
+                                    <span class="currency-name">Canadian Dollar</span>
+                                </div>
+                                <div class="currency-option" data-currency="AUD" data-rate="1.95" data-symbol="A$">
+                                    <span class="currency-flag">🇦🇺</span>
+                                    <span class="currency-code">AUD</span>
+                                    <span class="currency-name">Australian Dollar</span>
+                                </div>
+                                <!-- <div class="currency-option" data-currency="NGN" data-rate="1300" data-symbol="₦">
+                                    <span class="currency-flag">ng</span>
+                                    <span class="currency-code">NGN</span>
+                                    <span class="currency-name">Nigeria Naira</span>
+                                </div> -->
                             </div>
                         </div>
-                    </div>
-                    <div class="hamburger">
-                        <i class="fas fa-bars"></i>
+                        
+                        <div class="hamburger">
+                            <i class="fas fa-bars"></i>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -82,310 +96,290 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Shop Our Collection</h1>
-            <p>Discover luxury beauty products for the modern woman</p>
+            <h1>Press on Nails Collection</h1>
+            <p>Discover luxury press on nails for the modern woman</p>
         </div>
     </section>
 
     <!-- Shop Section -->
     <section class="shop">
         <div class="container">
-                      
-                <div class="category-filters">
-                    <button class="category-button active">ALL</button>
-                    <a href="LASHES.HTML"><button class="category-button">lashes</button></a>
-                    <a href="lip gloss.html"><button class="category-button">lip gloss</button></a>
-                    <a href="lip matte.html"><button class="category-button">lip matte</button></a>
-                    <a href="press on nails.html"><button class="category-button">press on nails</button></a>
-                    <a href="lip-liner.html"><button class="category-button">lip liner</button></a>
-                </div>     
-                 <div class="products-grid">
-                        <!-- Product 1 -->
-                    <div class="product-card">
-                        <img src="../N015.jpg" alt="NAIL" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">Press on Nails</div>
-                            <h3 class="product-name">Blush Marble Elegance-long coffin press-on nails</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>
-                               A soft, feminine blend of blush pink and luxury marble accents.
-                                This set gives you that classy, rich-auntie vibe with a touch of glam — perfect for date nights, photoshoots, events, or your everyday soft-girl look.
-                            </details>
+            <div class="category-filters">
+                <a href="shop.html"><button class="category-button">ALL</button></a>
+                <a href="LASHES.HTML"><button class="category-button">lashes</button></a>
+                <a href="lip gloss.html"><button class="category-button">lip gloss</button></a>
+                <a href="lip matte.html"><button class="category-button">lip matte</button></a>
+                <a href="press on nails.html"><button class="category-button active">press on nails</button></a>
+                <a href="lip-liner.html"><button class="category-button">lip liner</button></a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="../N015.jpg" alt="Blush Marble Elegance Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Blush Marble Elegance - Long Coffin</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            A soft, feminine blend of blush pink and luxury marble accents. This set gives you that classy, rich-auntie vibe with a touch of glam — perfect for date nights, photoshoots, events, or your everyday soft-girl look.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="22" data-name="Blush Marble Elegance - Long Coffin" data-price="10.00" data-image="../N015.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="1" data-name="Lush Lips Gloss - Pink Sparkle" data-price="18.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="../N020.jpg" alt="Soft pink luxury press on nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Soft Pink Luxury Press on Nails</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Soft pink luxury press-on nails with cute red star and heart details. Durable, reusable, and easy to apply — get a salon-perfect look in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="23" data-name="Soft Pink Luxury Press on Nails" data-price="10.00" data-image="../N020.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Product 2 -->
-                    <div class="product-card">
-                        <img src="../N020.jpg" alt="Soft pink luxury press-on nails" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name">Soft pink luxury press on nails </h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                             <details>Soft pink luxury press-on nails 
-                                with cute red star and heart details. Durable, reusable, 
-                                and easy to apply — get a salon-perfect look in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="2" data-name="Soft pink luxury press on nails" data-price="24.99" data-image="../N020.jpg">Add to Cart</button>
-                               <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="../N013.jpg" alt="Bold Red Textured Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Bold Red Textured Press on Nails</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Bold red textured press-on nails designed to make a statement. Reusable, durable, and easy to apply — enjoy a flawless salon finish in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="24" data-name="Bold Red Textured Press on Nails" data-price="10.00" data-image="../N013.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Product 3 -->
-                    <div class="product-card">
-                        <img src="../N013.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">Bold red textured press-ob nails</div>
-                            <h3 class="product-name">Precision Lip Liner - Nude</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Bold red textured press-on nails designed to make a statement. Reusable, durable, and easy to apply — enjoy a flawless salon finish in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="3" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N013">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="../N018.jpg" alt="Classic Ash Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Classic Ash Press on Nails</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Classic ash press-on nails for a clean, timeless look. Smooth, durable, and easy to apply — get a fresh salon finish in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="25" data-name="Classic Ash Press on Nails" data-price="10.00" data-image="../N018.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                    <!-- Product 4 -->
-                    <div class="product-card">
-                        <img src="../N018.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category"> press-on nails</div>
-                            <h3 class="product-name">classic ash press-on nails</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Classic ash press-on nails for a clean, timeless look. Smooth, durable, and easy to apply — get a fresh salon finish in minutes with Batluxe Beauty</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="4" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N018">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <img src="../N004.jpg" alt="Brown Marble Stiletto Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Brown Marble Stiletto Press on Nails</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Brown marble stiletto press-on nails with chic nude and dotted accents. Bold, stylish, and easy to apply — enjoy a flawless salon finish in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="26" data-name="Brown Marble Stiletto Press on Nails" data-price="10.00" data-image="../N004.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                     <!-- Product 5 -->
-                    <div class="product-card">
-                        <img src="../N004.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name">Precision Lip Liner - Nude</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Brown marble stiletto press-on nails with chic nude and dotted accents. Bold, stylish, and easy to apply — enjoy a flawless salon finish in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="5" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N004">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <img src="../N010.jpg" alt="Nude Press on Nails with Yellow French Tips" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Nude Press on with Yellow French Tips</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Nude press-on nails with bright yellow French tips and a cute 3D flower accent. Fresh, fun, and easy to apply — enjoy a salon-perfect look in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="27" data-name="Nude Press on with Yellow French Tips" data-price="10.00" data-image="../N010.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                     <!-- Product 6 -->
-                    <div class="product-card">
-                        <img src="../N010.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name"> Nude press-on </h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Nude press-on nails with bright yellow French tips and a cute 3D flower accent. Fresh, fun, and easy to apply — enjoy a salon-perfect look in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="6" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N010">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <img src="../N001.jpg" alt="Chocolate Brown Textured Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Chocolate Brown Textured Press on Nails</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Chocolate brown textured press-on nails with a chic dotted finish. Stylish, durable, and easy to apply — enjoy a flawless salon look in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="28" data-name="Chocolate Brown Textured Press on Nails" data-price="10.00" data-image="../N001.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                   <!-- Product 7-->
-                    <div class="product-card">
-                        <img src="../N001.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name"> chocolate brown textured press-on nails</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Chocolate brown textured press-on nails with a chic dotted finish. Stylish, durable, and easy to apply — enjoy a flawless salon look in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="7" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N001">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <img src="../N017.jpg" alt="Blue and Pink Patterned Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Blue and Pink Patterned Press on Nails</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Blue and pink patterned press-on nails with a glossy finish and nude accent nails. Fun, trendy, and easy to apply — get a salon-quality look in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="29" data-name="Blue and Pink Patterned Press on Nails" data-price="10.00" data-image="../N017.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                     <!-- Product 8 -->
-                    <div class="product-card">
-                        <img src="../N017.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name">Blue and pink patterened press-on nails </h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Blue and pink patterned press-on nails with a glossy finish and nude accent nails. Fun, trendy, and easy to apply — get a salon-quality look in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="8" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N017">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <img src="../N010.jpg" alt="Nude Press on with Red Patterned French Tips" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Nude with Red Patterned French Tips</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Nude press-on nails with bold red patterned French tips. Classy with a pop of colour — reusable, durable, and easy to apply for a perfect salon finish in minutes.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="30" data-name="Nude with Red Patterned French Tips" data-price="10.00" data-image="../N010.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                     <!-- Product 9 -->
-                    <div class="product-card">
-                        <img src="../N010.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name">Nude press-on nails with bold red patterened french tips</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Nude press-on nails with bright yellow French tips and a cute 3D flower accent. Fresh, fun, and easy to apply — enjoy a salon-perfect look in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="9" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N010">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card">
+                    <img src="../N012.jpg" alt="Vibrant Blue Marble Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Vibrant Blue Marble Press on Nails</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Vibrant blue press-on nails with marble accent nails for a stylish, modern look. Reusable, durable, and easy to apply — enjoy a flawless salon finish in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="31" data-name="Vibrant Blue Marble Press on Nails" data-price="10.00" data-image="../N012.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                    <!-- Product 10 -->
-                    <div class="product-card">
-                        <img src="" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name"> Nude press-on nails with bold red heart-patterned french tips. </h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Nude press-on nails with bold red patterned French tips. Classy with a pop of colour — reusable, durable, and easy to apply for a perfect salon finish in minutes.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="10" data-name=" Nude press-on nails with bold red heart-patterned french tips. " data-price="10.00" data-image="../N010">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="product-card">
+                    <img src="../N016.jpg" alt="Nude Leopard Print French Tips" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Nude with Leopard Print French Tips</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Nude press-on nails with chic leopard-print French tips. Classy with a bold touch — reusable, durable, and easy to apply for a perfect salon finish in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="32" data-name="Nude with Leopard Print French Tips" data-price="10.00" data-image="../N016.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                    <!-- Product 11 -->
-                    <div class="product-card">
-                        <img src="../N012.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name"> Nude press-on </h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Vibrant blue press-on nails with marble accent nails for a stylish, modern look. Reusable, durable, and easy to apply — enjoy a flawless salon finish in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="11" data-name=" Nude press-on" data-price="10.00" data-image="../N012">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="product-card">
+                    <img src="../N019.jpg" alt="Classic Red Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Classic Red Press on Nails</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Classic glossy red press-on nails for a bold, timeless look. Sleek, reusable, and easy to apply — enjoy an effortless salon-quality finish in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="33" data-name="Classic Red Press on Nails" data-price="10.00" data-image="../N019.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                    <!-- Product 12 -->
-                    <div class="product-card">
-                        <img src="" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name">Deep chocolate brown textured press-on nails</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Deep chocolate brown textured press-on nails with a luxe, glossy finish. Bold, reusable, and easy to apply — get a sleek salon look in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="12" data-name="Deep chocolate brown textured press-on nails" data-price="10.00" data-image="">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 13 -->
+                <div class="product-card">
+                    <img src="../N002.jpg" alt="Matte Black Textured Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Matte Black Textured Press on Nails</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Matte black textured press-on nails with a bold dotted finish. Sleek, edgy, and reusable — enjoy a flawless salon-look in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="34" data-name="Matte Black Textured Press on Nails" data-price="10.00" data-image="../N002.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                    <!-- Product 13 -->
-                    <div class="product-card">
-                        <img src="" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name">Red stiletto press-on nails</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <detail>Red stiletto press-on nails with bold patterns and soft nude accents. Fierce, stylish, and easy to apply — enjoy a flawless salon look in minutes with Batluxe Beauty.</detail>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="13" data-name="Red stiletto press-on nails" data-price="10.00" data-image="">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 14 -->
+                <div class="product-card">
+                    <img src="../N003.jpg" alt="Nude Swirl French Tips Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Nude with Swirl French Tips</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Nude press-on nails with bold black-and-white swirl French tips. Trendy, elegant, and easy to apply — enjoy a smooth, salon-quality finish in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="35" data-name="Nude with Swirl French Tips" data-price="10.00" data-image="../N003.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
-                    <!-- Product 14 -->
-                    <div class="product-card">
-                        <img src="" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name">Rich brown press-on nails</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <detail>Rich brown press-on nails with cute nude heart accent nails. Soft, stylish, and easy to apply — enjoy a smooth salon-quality finish in minutes with Batluxe Beauty.</detail>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="14" data-name="Rich brown press-on nails" data-price="10.00" data-image="">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                   <!-- Product 15 -->
-                    <div class="product-card">
-                        <img src="" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name">Classic glossy red press-on nails</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Classic glossy red press-on nails for a bold, timeless look. Sleek, reusable, and easy to apply — enjoy an effortless salon-quality finish in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="15" data-name="Classic glossy red press-on nails" data-price="10.00" data-image="../N010">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 16 -->
-                    <div class="product-card">
-                        <img src="" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name">Nude press-on nails Chic leopard-print French tips</h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Nude press-on nails with chic leopard-print French tips. Classy with a bold touch — reusable, durable, and easy to apply for a perfect salon finish in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="16" data-name="Nude press-on nails Chic leopard-print French tips" data-price="10.00" data-image="">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                   <!-- Product 17 -->
-                    <div class="product-card">
-                        <img src="" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name"> Nude press-on </h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Vibrant blue press-on nails with marble accent nails for a stylish, modern look. Reusable, durable, and easy to apply — enjoy a flawless salon finish in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="11" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N010">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 18 -->
-                    <div class="product-card">
-                        <img src="../N012.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name"> Nude press-on </h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Vibrant blue press-on nails with marble accent nails for a stylish, modern look. Reusable, durable, and easy to apply — enjoy a flawless salon finish in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="11" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N010">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 19 -->
-                    <div class="product-card">
-                        <img src="../N012.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name"> Nude press-on </h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Vibrant blue press-on nails with marble accent nails for a stylish, modern look. Reusable, durable, and easy to apply — enjoy a flawless salon finish in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="11" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N010">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 20 -->
-                    <div class="product-card">
-                        <img src="../N011.jpg" alt="Precision Lip Liner" class="product-img">
-                        <div class="product-info">
-                            <div class="product-category">press-on nails</div>
-                            <h3 class="product-name"> Nude press-on </h3>
-                            <div class="product-price" data-original-price="10.00">£10.00</div>
-                            <details>Vibrant blue press-on nails with marble accent nails for a stylish, modern look. Reusable, durable, and easy to apply — enjoy a flawless salon finish in minutes with Batluxe Beauty.</details>
-                            <div class="product-actions">
-                                <button class="btn add-to-cart-btn" data-id="11" data-name="Precision Lip Liner - Nude" data-price="10.00" data-image="../N010">Add to Cart</button>
-                                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
-                            </div>
+                </div>
+
+                <!-- Product 15 -->
+                <div class="product-card">
+                    <img src="../N011.jpg" alt="Glossy Red Black Swirl Press on Nails" class="product-img">
+                    <div class="product-info">
+                        <div class="product-category">Press on Nails</div>
+                        <h3 class="product-name">Glossy Red with Black Swirl Accents</h3>
+                        <div class="product-price" data-original-price="10.00" data-base-price="10.00">£10.00</div>
+                        <details>
+                            <summary>Product Details</summary>
+                            Glossy red press-on nails with chic black swirl accents. Bold, stylish, and easy to apply — enjoy a salon-perfect finish in minutes with Batluxe Beauty.
+                        </details>
+                        <div class="product-actions">
+                            <button class="btn add-to-cart-btn" data-id="36" data-name="Glossy Red with Black Swirl Accents" data-price="10.00" data-image="../N011.jpg">Add to Cart</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                 </div>
@@ -393,35 +387,95 @@
         </div>
     </section>
 
-    <!-- Cart Sidebar -->
+    <!-- Cart Sidebar with Integrated Checkout -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
+            <button class="back-to-cart" id="backToCart" style="display: none;">
+                <i class="fas fa-arrow-left"></i> Back to Cart
+            </button>
             <h2>Your Shopping Cart</h2>
             <button class="close-cart" id="closeCart">&times;</button>
         </div>
         
-        <div class="cart-items" id="cartItems">
-            <!-- Cart items will be added here dynamically -->
-            <p class="empty-cart-message" id="emptyCartMessage">Your cart is empty</p>
+        <div class="cart-content">
+            <!-- Cart Items View -->
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart-message" id="emptyCartMessage">Your cart is empty</p>
+            </div>
+            
+            <!-- Cart Summary -->
+            <div class="cart-summary" id="cartSummary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">£0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <span id="deliveryFee">£5.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="total">£0.00</span>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+            
+            <!-- Checkout Form (Initially Hidden) -->
+            <div class="checkout-form" id="checkoutForm" style="display: none;">
+                <h3>Checkout Details</h3>
+                <form id="checkoutFormElement">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Delivery Address" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="City" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Postcode" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Country</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="AU">Australia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h4>Order Summary</h4>
+                        <div class="order-summary">
+                            <div class="summary-item">
+                                <span>Items:</span>
+                                <span id="checkoutItems">0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Subtotal:</span>
+                                <span id="checkoutSubtotal">£0.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Delivery:</span>
+                                <span id="checkoutDelivery">£5.00</span>
+                            </div>
+                            <div class="summary-item total">
+                                <span>Total:</span>
+                                <span id="checkoutTotal">£0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="place-order-btn">Place Order</button>
+                </form>
+            </div>
         </div>
-        
-        
-    </div>
-    <!-- In your cart sidebar (add this to both home and shop pages) -->
-    <div class="cart-summary">
-        <div class="summary-row">
-            <span>Subtotal</span>
-            <span id="subtotal">$0.00</span>
-        </div>
-        <div class="summary-row">
-            <span>Delivery Fee</span>
-            <span id="deliveryFee">$5.00</span>
-        </div>
-        <div class="summary-row total">
-            <span>Total</span>
-            <span id="total">$0.00</span>
-        </div>
-        <a href="checkoutpage.html"><button class="checkout-btn" id="checkoutBtn" >Proceed to Checkout</button></a>
     </div>
     
     <div class="overlay" id="overlay"></div>
@@ -430,9 +484,6 @@
     <div class="notification" id="notification">
         Item added to cart successfully!
     </div>
-    <section class="category-button">
-
-    </section>
 
     <!-- Footer -->
     <footer>
@@ -453,7 +504,6 @@
                         <li><a href="shop.html">Shop</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <!-- <li><a href="blog.html">Blog</a></li> -->
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -463,7 +513,6 @@
                         <li><a href="PRIVACY-POLICY.HTML">Privacy Policy</a></li>
                         <li><a href="term.condition.html">Terms & Conditions</a></li>
                         <li><a href="faq-question.html">FAQ</a></li>
-                        <!-- <li><a href="#">Track Order</a></li> -->
                     </ul>
                 </div>
             </div>

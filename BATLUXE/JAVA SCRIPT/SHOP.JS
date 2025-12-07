@@ -1,372 +1,736 @@
+// BatLuxe Beauty Shop — CLEAN, OPTIMIZED & FULLY DEBUGGED VERSION
+document.addEventListener("DOMContentLoaded", () => {
+    // ==========================
+    // ELEMENT REFERENCES
+    // ==========================
+    const cartIcon = document.getElementById("cartIcon");
+    const cartSidebar = document.getElementById("cartSidebar");
+    const closeCart = document.getElementById("closeCart");
+    const overlay = document.getElementById("overlay");
+    const cartCount = document.getElementById("cartCount");
+    const cartItems = document.getElementById("cartItems");
+    const emptyCartMessage = document.getElementById("emptyCartMessage");
+    const subtotalElement = document.getElementById("subtotal");
+    const deliveryFeeElement = document.getElementById("deliveryFee");
+    const totalElement = document.getElementById("total");
+    const notification = document.getElementById("notification");
 
+    const checkoutBtn = document.getElementById("checkoutBtn");
+    const checkoutForm = document.getElementById("checkoutForm");
+    const cartSummary = document.getElementById("cartSummary");
+    const backToCart = document.getElementById("backToCart");
+    const checkoutFormElement = document.getElementById("checkoutFormElement");
 
-        // Cart functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Cart elements
-            const cartIcon = document.getElementById('cartIcon');
-            const cartSidebar = document.getElementById('cartSidebar');
-            const closeCart = document.getElementById('closeCart');
-            const overlay = document.getElementById('overlay');
-            const cartCount = document.getElementById('cartCount');
-            const cartItems = document.getElementById('cartItems');
-            const emptyCartMessage = document.getElementById('emptyCartMessage');
-            const subtotalElement = document.getElementById('subtotal');
-            const deliveryFeeElement = document.getElementById('deliveryFee');
-            const totalElement = document.getElementById('total');
-            const notification = document.getElementById('notification');
-            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-            
-            // Cart data
-            let cart = [];
-            const deliveryFee = 5.99; // Fixed delivery fee
-            const freeDeliveryThreshold = 5000.00; // Free delivery for orders over $5000
-            
-            // Event Listeners
-            cartIcon.addEventListener('click', openCart);
-            closeCart.addEventListener('click', closeCartSidebar);
-            overlay.addEventListener('click', closeCartSidebar);
-            
-            // Add to cart buttons
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const productId = this.getAttribute('data-id');
-                    const productName = this.getAttribute('data-name');
-                    const productPrice = parseFloat(this.getAttribute('data-price'));
-                    const productImage = this.getAttribute('data-image');
-                    
-                    addToCart(productId, productName, productPrice, productImage);
-                });
-            });
-            
-            // Functions
-            function openCart() {
-                cartSidebar.classList.add('active');
-                overlay.classList.add('active');
-            }
-            
-            function closeCartSidebar() {
-                cartSidebar.classList.remove('active');
-                overlay.classList.remove('active');
-            }
-            
-            function addToCart(id, name, price, image) {
-                // Check if item already exists in cart
-                const existingItemIndex = cart.findIndex(item => item.id === id);
-                
-                if (existingItemIndex !== -1) {
-                    // Update quantity if item already exists
-                    cart[existingItemIndex].quantity += 1;
-                } else {
-                    // Add new item to cart
-                    cart.push({
-                        id: id,
-                        name: name,
-                        price: price,
-                        image: image,
-                        quantity: 1
-                    });
-                }
-                
-                // Update UI
-                updateCartUI();
-                
-                // Show notification
-                showNotification();
-            }
-            
-            function updateCartUI() {
-                // Update cart count
-                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-                cartCount.textContent = totalItems;
-                
-                // Update cart items
-                cartItems.innerHTML = '';
-                
-                if (cart.length === 0) {
-                    emptyCartMessage.style.display = 'block';
-                } else {
-                    emptyCartMessage.style.display = 'none';
-                    
-                    cart.forEach((item, index) => {
-                        const cartItem = document.createElement('div');
-                        cartItem.className = 'cart-item';
-                        cartItem.innerHTML = `
-                            <div class="item-image">
-                                <img src="${item.image}" alt="${item.name}">
-                            </div>
-                            <div class="item-details">
-                                <div class="item-name">${item.name}</div>
-                                <div class="item-price">$${item.price.toFixed(2)}</div>
-                                <div class="item-quantity">
-                                    <button class="quantity-btn minus" data-index="${index}">-</button>
-                                    <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-index="${index}">
-                                    <button class="quantity-btn plus" data-index="${index}">+</button>
-                                </div>
-                                <button class="remove-item" data-index="${index}">Remove</button>
-                            </div>
-                        `;
-                        cartItems.appendChild(cartItem);
-                    });
-                    
-                    // Add event listeners to quantity buttons and remove buttons
-                    document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
-                        btn.addEventListener('click', decreaseQuantity);
-                    });
-                    
-                    document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
-                        btn.addEventListener('click', increaseQuantity);
-                    });
-                    
-                    document.querySelectorAll('.quantity-input').forEach(input => {
-                        input.addEventListener('change', updateQuantity);
-                    });
-                    
-                    document.querySelectorAll('.remove-item').forEach(btn => {
-                        btn.addEventListener('click', removeItem);
-                    });
-                }
-                
-                // Update cart summary
-                updateCartSummary();
-            }
-            
-            function updateCartSummary() {
-                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-                
-                // Calculate delivery fee (free if subtotal is over threshold)
-                const calculatedDeliveryFee = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
-                
-                const total = subtotal + calculatedDeliveryFee;
-                
-                subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-                deliveryFeeElement.textContent = calculatedDeliveryFee === 0 ? "FREE" : `$${calculatedDeliveryFee.toFixed(2)}`;
-                totalElement.textContent = `$${total.toFixed(2)}`;
-            }
-            
-            function decreaseQuantity(e) {
-                const index = parseInt(e.target.getAttribute('data-index'));
-                if (cart[index].quantity > 1) {
-                    cart[index].quantity--;
-                    updateCartUI();
-                }
-            }
-            
-            function increaseQuantity(e) {
-                const index = parseInt(e.target.getAttribute('data-index'));
-                cart[index].quantity++;
-                updateCartUI();
-            }
-            
-            function updateQuantity(e) {
-                const index = parseInt(e.target.getAttribute('data-index'));
-                const newQuantity = parseInt(e.target.value);
-                
-                if (newQuantity > 0) {
-                    cart[index].quantity = newQuantity;
-                    updateCartUI();
-                } else {
-                    // If invalid quantity, reset to previous value
-                    e.target.value = cart[index].quantity;
-                }
-            }
-            
-            function removeItem(e) {
-                const index = parseInt(e.target.getAttribute('data-index'));
-                cart.splice(index, 1);
-                updateCartUI();
-            }
-            
-            function showNotification() {
-                notification.classList.add('active');
-                setTimeout(() => {
-                    notification.classList.remove('active');
-                }, 3000);
-            }
-            
-            // Currency Conversion Functionality
-            const currencyBtn = document.querySelector('.currency-btn');
-            const currencyDropdown = document.querySelector('.currency-dropdown');
-            const currencyOptions = document.querySelectorAll('.currency-option');
-            const selectedCurrency = document.querySelector('.selected-currency');
-            const productPrices = document.querySelectorAll('.product-price');
-            
-            // Toggle dropdown visibility
-            currencyBtn.addEventListener('click', function() {
-                currencyDropdown.classList.toggle('show');
-            });
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.currency-selector')) {
-                    currencyDropdown.classList.remove('show');
-                }
-            });
-            
-            // Handle currency selection
-            currencyOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    const currency = this.getAttribute('data-currency');
-                    const rate = parseFloat(this.getAttribute('data-rate'));
-                    const symbol = this.getAttribute('data-symbol');
-                    
-                    // Update selected currency display
-                    selectedCurrency.textContent = currency;
-                    
-                    // Update active state
-                    currencyOptions.forEach(opt => opt.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Convert all prices
-                    convertPrices(rate, symbol);
-                    
-                    // Close dropdown
-                    currencyDropdown.classList.remove('show');
-                });
-            });
-            
-            // Function to convert prices
-            function convertPrices(rate, symbol) {
-                productPrices.forEach(priceElement => {
-                    const originalPrice = parseFloat(priceElement.getAttribute('data-original-price'));
-                    const convertedPrice = (originalPrice * rate).toFixed(2);
-                    
-                    // Check if there's an old price (for sale items)
-                    const oldPriceElement = priceElement.querySelector('.old-price');
-                    if (oldPriceElement) {
-                        const oldOriginalPrice = parseFloat(oldPriceElement.textContent.replace('£', ''));
-                        const oldConvertedPrice = (oldOriginalPrice * rate).toFixed(2);
-                        priceElement.innerHTML = `${symbol}${convertedPrice} <span class="old-price">${symbol}${oldConvertedPrice}</span>`;
-                    } else {
-                        priceElement.textContent = `${symbol}${convertedPrice}`;
-                    }
-                });
-            }
-            
-            // Mobile Navigation Toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+    const productCards = document.querySelectorAll(".product-card");
 
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+    const currencyBtn = document.querySelector(".currency-btn");
+    const currencyDropdown = document.querySelector(".currency-dropdown");
+    const currencyOptions = document.querySelectorAll(".currency-option");
+    const selectedCurrency = document.querySelector(".selected-currency");
+
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+
+    // ==========================
+    // APP VARIABLES
+    // ==========================
+    let cart = JSON.parse(localStorage.getItem("batluxe_cart")) || [];
+    const deliveryFee = 5;
+    const freeDeliveryThreshold = 5000;
+
+    let currentCurrency = "GBP";
+    let currentRate = 1;
+    let currentSymbol = "£";
+
+    initApp();
+
+    // ==========================
+    // INITIALIZER
+    // ==========================
+    function initApp() {
+        setupEventListeners();
+        updateCartUI();
+        updateCurrencyDisplay();
+        startPriceUpdates();
+    }
+
+    // ==========================
+    // EVENT LISTENERS
+    // ==========================
+    function setupEventListeners() {
+        if (cartIcon) cartIcon.addEventListener("click", openCart);
+        if (closeCart) closeCart.addEventListener("click", closeCartSidebar);
+        if (overlay) overlay.addEventListener("click", closeCartSidebar);
+
+        if (checkoutBtn) checkoutBtn.addEventListener("click", showCheckoutForm);
+        if (backToCart) backToCart.addEventListener("click", showCart);
+
+        addToCartButtons.forEach(btn =>
+            btn.addEventListener("click", () => {
+                addToCart(
+                    btn.dataset.id,
+                    btn.dataset.name,
+                    parseFloat(btn.dataset.price),
+                    btn.dataset.image
+                );
+            })
+        );
+
+        if (checkoutFormElement)
+            checkoutFormElement.addEventListener("submit", e => {
+                e.preventDefault();
+                processCheckout();
             });
 
-            // Wishlist Toggle
-            const wishlistButtons = document.querySelectorAll('.wishlist-btn');
-            
-            wishlistButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const icon = button.querySelector('i');
-                    button.classList.toggle('active');
-                    
-                    if (button.classList.contains('active')) {
-                        icon.classList.remove('far');
-                        icon.classList.add('fas');
-                    } else {
-                        icon.classList.remove('fas');
-                        icon.classList.add('far');
-                    }
-                });
-            });
+        // Currency Selection
+        if (currencyBtn)
+            currencyBtn.addEventListener("click", () =>
+                currencyDropdown.classList.toggle("show")
+            );
+
+        document.addEventListener("click", e => {
+            if (!e.target.closest(".currency-selector"))
+                currencyDropdown.classList.remove("show");
         });
 
-            checkoutBtn.addEventListener('click', function() {
-                // Check if cart is empty
-                if (cart.length === 0) {
-                    showNotification('Your cart is empty! Add some products first.', 'error');
-                    return;
-                }
-                
-                // Prepare checkout data
-                const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-                const calculatedDeliveryFee = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
-                const total = subtotal + calculatedDeliveryFee;
-                
-                const checkoutData = {
-                    items: cart,
-                    subtotal: subtotal,
-                    deliveryFee: calculatedDeliveryFee,
-                    total: total,
-                    timestamp: new Date().toISOString()
-                };
-                
-                // Store checkout data in localStorage
-                localStorage.setItem('batluxe_checkout_data', JSON.stringify(checkoutData));
-                
-                // Redirect to checkout page
-                window.location.href = 'checkoutpage.html';
+        currencyOptions.forEach(option =>
+            option.addEventListener("click", () => {
+                currentCurrency = option.dataset.currency;
+                currentRate = parseFloat(option.dataset.rate);
+                currentSymbol = option.dataset.symbol;
+                updateCurrencyDisplay();
+                convertAllPrices();
+                updateCartUI();
+                currencyDropdown.classList.remove("show");
+            })
+        );
+
+        // Search
+        if (searchBtn) searchBtn.addEventListener("click", performSearch);
+        if (searchInput) {
+            searchInput.addEventListener("keyup", e => {
+                if (e.key === "Enter") performSearch();
             });
-            // Add this to your existing JavaScript on both home and shop pages
 
-        // Checkout functionality
-        const checkoutBtn = document.getElementById('checkoutBtn');
+            searchInput.addEventListener("input", () => {
+                if (searchInput.value.length === 0) clearSearch();
+                else if (searchInput.value.length > 2) performSearch();
+            });
+        }
 
-        checkoutBtn.addEventListener('click', function(e) {
-            // Prevent default link behavior
+        // Mobile Nav
+        if (hamburger && navLinks)
+            hamburger.addEventListener("click", () =>
+                navLinks.classList.toggle("active")
+            );
+    }
+
+    // ==========================
+    // CART LOGIC
+    // ==========================
+    function openCart() {
+        cartSidebar.classList.add("active");
+        overlay.classList.add("active");
+        showCart();
+    }
+
+    function closeCartSidebar() {
+        cartSidebar.classList.remove("active");
+        overlay.classList.remove("active");
+    }
+
+    function showCheckoutForm() {
+        if (cart.length === 0)
+            return showNotification("Cart is empty!", "error");
+
+        cartSummary.style.display = "none";
+        checkoutForm.style.display = "block";
+        backToCart.style.display = "flex";
+
+        const subtotal = cart.reduce((t, i) => t + i.price * i.quantity, 0);
+        const delivery = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
+
+        document.getElementById("checkoutItems").textContent = cart.reduce(
+            (t, i) => t + i.quantity,
+            0
+        );
+        document.getElementById("checkoutSubtotal").textContent = formatPrice(subtotal);
+        document.getElementById("checkoutDelivery").textContent =
+            delivery === 0 ? "FREE" : formatPrice(delivery);
+        document.getElementById("checkoutTotal").textContent = formatPrice(subtotal + delivery);
+    }
+
+    function showCart() {
+        cartSummary.style.display = "block";
+        checkoutForm.style.display = "none";
+        backToCart.style.display = "none";
+    }
+
+    function addToCart(id, name, price, image) {
+        const index = cart.findIndex(i => i.id === id);
+
+        if (index !== -1) cart[index].quantity++;
+        else
+            cart.push({
+                id,
+                name,
+                price,
+                image,
+                quantity: 1
+            });
+
+        saveCart();
+        updateCartUI();
+        showNotification("Item added to cart!");
+    }
+
+    function updateCartUI() {
+        cartCount.textContent = cart.reduce((t, i) => t + i.quantity, 0);
+        cartItems.innerHTML = "";
+
+        if (cart.length === 0) {
+            emptyCartMessage.style.display = "block";
+        } else {
+            emptyCartMessage.style.display = "none";
+
+            cart.forEach((item, i) => {
+                const div = document.createElement("div");
+                div.className = "cart-item";
+
+                div.innerHTML = `
+                    <div class="item-image"><img src="${item.image}" /></div>
+                    <div class="item-details">
+                        <div class="item-name">${item.name}</div>
+                        <div class="item-price">${formatPrice(item.price)}</div>
+                        <div class="item-quantity">
+                            <button class="minus" data-i="${i}">-</button>
+                            <input type="number" value="${item.quantity}" min="1" data-i="${i}">
+                            <button class="plus" data-i="${i}">+</button>
+                        </div>
+                        <button class="remove-item" data-i="${i}">Remove</button>
+                    </div>
+                `;
+
+                cartItems.appendChild(div);
+            });
+
+            document.querySelectorAll(".minus").forEach(btn =>
+                btn.addEventListener("click", () => changeQty(btn.dataset.i, -1))
+            );
+            document.querySelectorAll(".plus").forEach(btn =>
+                btn.addEventListener("click", () => changeQty(btn.dataset.i, +1))
+            );
+            document.querySelectorAll("input[type='number']").forEach(inp =>
+                inp.addEventListener("change", () =>
+                    updateQty(inp.dataset.i, parseInt(inp.value))
+                )
+            );
+            document.querySelectorAll(".remove-item").forEach(btn =>
+                btn.addEventListener("click", () => removeItem(btn.dataset.i))
+            );
+        }
+
+        updateCartSummary();
+    }
+
+    function changeQty(i, amount) {
+        let q = cart[i].quantity + amount;
+        if (q < 1) q = 1;
+        cart[i].quantity = q;
+        saveCart();
+        updateCartUI();
+    }
+
+    function updateQty(i, q) {
+        if (q < 1) q = 1;
+        cart[i].quantity = q;
+        saveCart();
+        updateCartUI();
+    }
+
+    function removeItem(i) {
+        cart.splice(i, 1);
+        saveCart();
+        updateCartUI();
+    }
+
+    function updateCartSummary() {
+        const subtotal = cart.reduce((t, i) => t + i.price * i.quantity, 0);
+        const delivery = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
+        subtotalElement.textContent = formatPrice(subtotal);
+        deliveryFeeElement.textContent = delivery === 0 ? "FREE" : formatPrice(delivery);
+        totalElement.textContent = formatPrice(subtotal + delivery);
+    }
+
+    function saveCart() {
+        localStorage.setItem("batluxe_cart", JSON.stringify(cart));
+    }
+
+    function processCheckout() {
+        showNotification("Order placed successfully!", "success");
+        cart = [];
+        saveCart();
+        updateCartUI();
+        showCart();
+
+        setTimeout(closeCartSidebar, 1500);
+    }
+
+    // ==========================
+    // SEARCH
+    // ==========================
+    function performSearch() {
+        const term = searchInput.value.toLowerCase().trim();
+        if (!term) return clearSearch();
+
+        let match = false;
+
+        productCards.forEach(card => {
+            const name = card.querySelector(".product-name").textContent.toLowerCase();
+            const cat = card.querySelector(".product-category").textContent.toLowerCase();
+
+            if (name.includes(term) || cat.includes(term)) {
+                card.style.display = "block";
+                card.classList.add("highlight");
+                setTimeout(() => card.classList.remove("highlight"), 1000);
+                match = true;
+            } else card.style.display = "none";
+        });
+
+        if (!match) showNotification("No matching products", "error");
+    }
+
+    function clearSearch() {
+        productCards.forEach(card => (card.style.display = "block"));
+    }
+
+    // ==========================
+    // CURRENCY / PRICE SYSTEM
+    // ==========================
+    function updateCurrencyDisplay() {
+        selectedCurrency.textContent = currentCurrency;
+        currencyOptions.forEach(opt => {
+            opt.classList.toggle("active", opt.dataset.currency === currentCurrency);
+        });
+    }
+
+    function convertAllPrices() {
+        document.querySelectorAll(".product-price").forEach(priceEl => {
+            const basePrice = parseFloat(priceEl.dataset.basePrice);
+            const convertedPrice = (basePrice * currentRate).toFixed(2);
+            priceEl.textContent = `${currentSymbol}${convertedPrice}`;
+        });
+    }
+
+    function startPriceUpdates() {
+        updateProductPrices();
+        setInterval(updateProductPrices, 30000);
+    }
+
+    function updateProductPrices() {
+        document.querySelectorAll(".product-card").forEach(card => {
+            const priceEl = card.querySelector(".product-price");
+            const addBtn = card.querySelector(".add-to-cart-btn");
+            if (!priceEl || !addBtn) return;
+
+            let base = parseFloat(priceEl.dataset.basePrice);
+            const change = (Math.random() - 0.5) * 0.1;
+            base = (base * (1 + change)).toFixed(2);
+
+            priceEl.dataset.basePrice = base;
+            addBtn.dataset.price = base;
+
+            priceEl.textContent = `${currentSymbol}${(base * currentRate).toFixed(2)}`;
+
+            // sync with cart
+            const id = addBtn.dataset.id;
+            const idx = cart.findIndex(i => i.id === id);
+            if (idx !== -1) {
+                cart[idx].price = parseFloat(base);
+                saveCart();
+                updateCartUI();
+            }
+        });
+    }
+
+    // ==========================
+    // HELPERS
+    // ==========================
+    function formatPrice(amount) {
+        return `${currentSymbol}${amount.toFixed(2)}`;
+    }
+
+    function showNotification(message, type = "success") {
+        notification.textContent = message;
+        notification.className = `notification ${type} active`;
+        setTimeout(() => notification.classList.remove("active"), 3000);
+    }
+});
+document.addEventListener("DOMContentLoaded", () => {
+
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+    const productCards = document.querySelectorAll(".product-card");
+
+    function searchProducts() {
+        const searchValue = searchInput.value.toLowerCase().trim();
+        let matchFound = false;
+
+        productCards.forEach(card => {
+            const name = card.querySelector(".product-name").textContent.toLowerCase();
+            const category = card.querySelector(".product-category").textContent.toLowerCase();
+
+            if (name.includes(searchValue) || category.includes(searchValue)) {
+                card.style.display = "block";
+                matchFound = true;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // If no result found, show a message
+        let noResult = document.getElementById("noResultsMessage");
+
+        if (!matchFound) {
+            if (!noResult) {
+                noResult = document.createElement("p");
+                noResult.id = "noResultsMessage";
+                noResult.textContent = "No products match your search.";
+                noResult.style.textAlign = "center";
+                noResult.style.fontSize = "18px";
+                noResult.style.marginTop = "20px";
+                noResult.style.color = "#e75480";
+                document.querySelector(".products-grid").appendChild(noResult);
+            }
+        } else {
+            if (noResult) noResult.remove();
+        }
+    }
+
+    // 🔍 Search on typing
+    searchInput.addEventListener("input", searchProducts);
+
+    // 🔎 Search when button is clicked
+    searchBtn.addEventListener("click", searchProducts);
+});
+// Add this to your existing shop.js file
+
+// Handle checkout form submission
+document.addEventListener('DOMContentLoaded', function() {
+    const checkoutForm = document.getElementById('checkoutFormElement');
+    const proceedToPaymentBtn = document.getElementById('proceedToPaymentBtn');
+    
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Check if cart is empty
-            if (cart.length === 0) {
-                showNotification('Your cart is empty! Add some products first.', 'error');
-                return;
-            }
-            
-            // Prepare checkout data
-            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-            const calculatedDeliveryFee = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
-            const total = subtotal + calculatedDeliveryFee;
-            
-            const checkoutData = {
-                items: cart,
-                subtotal: subtotal,
-                deliveryFee: calculatedDeliveryFee,
-                total: total,
-                timestamp: new Date().toISOString()
+            // Collect form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                postcode: document.getElementById('postcode').value,
+                country: document.getElementById('country').value,
+                items: document.getElementById('checkoutItems').textContent,
+                subtotal: document.getElementById('checkoutSubtotal').textContent,
+                delivery: document.getElementById('checkoutDelivery').textContent,
+                total: document.getElementById('checkoutTotal').textContent,
+                cartItems: getCartItems() // You need to implement this function
             };
             
-            // Store checkout data in localStorage
-            localStorage.setItem('batluxe_checkout_data', JSON.stringify(checkoutData));
+            // Save order data to localStorage
+            saveOrderData(formData);
             
-            // Redirect to checkout page
-            window.location.href = 'checkoutpage.html';
+            // Show loading state
+            proceedToPaymentBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            proceedToPaymentBtn.disabled = true;
+            
+            // Simulate processing delay (remove this in production)
+            setTimeout(function() {
+                // Redirect to payment page
+                window.location.href = 'payment.html';
+            }, 1000);
         });
+    }
+});
 
-        // Enhanced notification function
-        function showNotification(message = 'Item added to cart successfully!', type = 'success') {
-            const notification = document.getElementById('notification');
-            notification.textContent = message;
-            
-            // Reset classes
-            notification.className = 'notification';
-            
-            // Add type class
-            notification.classList.add(type);
-            notification.classList.add('active');
-            
-            setTimeout(() => {
-                notification.classList.remove('active');
-            }, 3000);
-        }
-  checkoutBtn.addEventListener('click', function(e) {
-    // Prevent default link behavior
-    e.preventDefault();
+// Function to save order data to localStorage
+function saveOrderData(formData) {
+    // Get current cart items
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // Check if cart is empty
+    // Create order object
+    const order = {
+        orderId: 'ORD-' + Date.now(),
+        date: new Date().toISOString(),
+        customer: {
+            name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            address: formData.address,
+            city: formData.city,
+            postcode: formData.postcode,
+            country: formData.country
+        },
+        items: cart,
+        summary: {
+            subtotal: formData.subtotal,
+            delivery: formData.delivery,
+            total: formData.total
+        },
+        status: 'pending'
+    };
+    
+    // Save order to localStorage
+    localStorage.setItem('currentOrder', JSON.stringify(order));
+    
+    // Also save to orders history
+    const orders = JSON.parse(localStorage.getItem('orders')) || [];
+    orders.push(order);
+    localStorage.setItem('orders', JSON.stringify(orders));
+}
+
+// Function to get cart items (add this if not exists)
+function getCartItems() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+// Add to cart functionality (make sure this exists)
+function addToCart(product) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingItem = cart.find(item => item.id === product.id);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        product.quantity = 1;
+        cart.push(product);
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    updateCartDisplay();
+    
+    // Show notification
+    showNotification('Item added to cart!');
+}
+
+// Update cart display function
+function updateCartDisplay() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    const subtotalElement = document.getElementById('subtotal');
+    const totalElement = document.getElementById('total');
+    const checkoutItemsElement = document.getElementById('checkoutItems');
+    const checkoutSubtotalElement = document.getElementById('checkoutSubtotal');
+    const checkoutTotalElement = document.getElementById('checkoutTotal');
+    
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const deliveryFee = 5.00;
+    
     if (cart.length === 0) {
-        alert('Your cart is empty! Add some products first.');
+        cartItemsContainer.innerHTML = '<p class="empty-cart-message">Your cart is empty</p>';
+        subtotalElement.textContent = '£0.00';
+        totalElement.textContent = '£0.00';
+        checkoutItemsElement.textContent = '0';
+        checkoutSubtotalElement.textContent = '£0.00';
+        checkoutTotalElement.textContent = '£0.00';
         return;
     }
     
-    // Prepare checkout data
-    const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-    const calculatedDeliveryFee = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
-    const total = subtotal + calculatedDeliveryFee;
+    let subtotal = 0;
+    let itemsHTML = '';
     
-    // Store cart data in localStorage
-    localStorage.setItem('batluxe_cart', JSON.stringify(cart));
-    localStorage.setItem('batluxe_subtotal', subtotal.toFixed(2));
-    localStorage.setItem('batluxe_delivery', calculatedDeliveryFee.toFixed(2));
-    localStorage.setItem('batluxe_total', total.toFixed(2));
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        
+        itemsHTML += `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                <div class="cart-item-details">
+                    <h4>${item.name}</h4>
+                    <div class="cart-item-price">£${item.price.toFixed(2)}</div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                    </div>
+                </div>
+                <div class="cart-item-total">£${itemTotal.toFixed(2)}</div>
+                <button class="remove-item" data-id="${item.id}">&times;</button>
+            </div>
+        `;
+    });
     
-    // Redirect to checkout page
-    window.location.href = 'checkoutpage.html';
- });
+    cartItemsContainer.innerHTML = itemsHTML;
+    
+    const total = subtotal + deliveryFee;
+    
+    subtotalElement.textContent = `£${subtotal.toFixed(2)}`;
+    totalElement.textContent = `£${total.toFixed(2)}`;
+    checkoutItemsElement.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    checkoutSubtotalElement.textContent = `£${subtotal.toFixed(2)}`;
+    checkoutTotalElement.textContent = `£${total.toFixed(2)}`;
+    
+    // Add event listeners to quantity buttons
+    document.querySelectorAll('.quantity-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const itemId = this.dataset.id;
+            const isPlus = this.classList.contains('plus');
+            updateCartQuantity(itemId, isPlus);
+        });
+    });
+    
+    // Add event listeners to remove buttons
+    document.querySelectorAll('.remove-item').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const itemId = this.dataset.id;
+            removeFromCart(itemId);
+        });
+    });
+}
+
+// Show notification function
+function showNotification(message) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.classList.add('show');
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 3000);
+}
+// Add this function to your existing JavaScript file
+function handleCheckoutFormSubmission(e) {
+    e.preventDefault();
+    
+    // Collect form data
+    const formData = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        city: document.getElementById('city').value,
+        postcode: document.getElementById('postcode').value,
+        country: document.getElementById('country').value,
+        items: document.getElementById('checkoutItems').textContent,
+        subtotal: document.getElementById('checkoutSubtotal').textContent,
+        delivery: document.getElementById('checkoutDelivery').textContent,
+        total: document.getElementById('checkoutTotal').textContent,
+        cartItems: cart
+    };
+    
+    // Validate form
+    if (!formData.fullName || !formData.email || !formData.phone || !formData.address || 
+        !formData.city || !formData.postcode || !formData.country) {
+        showNotification("Please fill in all required fields", "error");
+        return;
+    }
+    
+    // Save order data to localStorage
+    saveOrderData(formData);
+    
+    // Show loading state
+    const submitBtn = document.getElementById('proceedToPaymentBtn');
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+    submitBtn.disabled = true;
+    
+    // Simulate processing delay
+    setTimeout(function() {
+        // Redirect to payment page
+        window.location.href = "payment.html";
+    }, 1500);
+}
+
+// Function to save order data to localStorage
+function saveOrderData(formData) {
+    // Create order object
+    const order = {
+        orderId: 'ORD-' + Date.now(),
+        date: new Date().toISOString(),
+        customer: {
+            name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            address: formData.address,
+            city: formData.city,
+            postcode: formData.postcode,
+            country: formData.country
+        },
+        items: formData.cartItems,
+        summary: {
+            items: formData.items,
+            subtotal: formData.subtotal,
+            delivery: formData.delivery,
+            total: formData.total
+        },
+        status: 'pending'
+    };
+    
+    // Save current order
+    localStorage.setItem('currentOrder', JSON.stringify(order));
+    
+    // Also save to orders history
+    const orders = JSON.parse(localStorage.getItem('batluxe_orders')) || [];
+    orders.push(order);
+    localStorage.setItem('batluxe_orders', JSON.stringify(orders));
+    
+    // Keep cart items for payment page
+    localStorage.setItem('batluxe_checkout_cart', JSON.stringify(formData.cartItems));
+}
+
+// Update your existing processCheckout function to use the form submission
+function processCheckout() {
+    if (cart.length === 0) {
+        showNotification("Cart is empty!", "error");
+        return;
+    }
+    
+    // Update checkout summary
+    const subtotal = cart.reduce((t, i) => t + i.price * i.quantity, 0);
+    const delivery = subtotal >= 5000 ? 0 : 5; // Assuming 5000 is your free delivery threshold
+    
+    document.getElementById("checkoutItems").textContent = cart.reduce(
+        (t, i) => t + i.quantity,
+        0
+    );
+    document.getElementById("checkoutSubtotal").textContent = formatPrice(subtotal);
+    document.getElementById("checkoutDelivery").textContent = 
+        delivery === 0 ? "FREE" : formatPrice(delivery);
+    document.getElementById("checkoutTotal").textContent = formatPrice(subtotal + delivery);
+    
+    // Show checkout form
+    cartSummary.style.display = "none";
+    checkoutForm.style.display = "block";
+    backToCart.style.display = "flex";
+}
+
+// Add event listener for form submission (place this in your setupEventListeners function)
+if (checkoutFormElement) {
+    checkoutFormElement.addEventListener("submit", handleCheckoutFormSubmission);
+}
+
+// Also update the showCart function to reset the form button state
+function showCart() {
+    cartSummary.style.display = "block";
+    checkoutForm.style.display = "none";
+    backToCart.style.display = "none";
+    
+    // Reset form button state
+    const submitBtn = document.getElementById('proceedToPaymentBtn');
+    if (submitBtn) {
+        submitBtn.innerHTML = 'Proceed to Payment';
+        submitBtn.disabled = false;
+    }
+    
+    // Reset form fields
+    if (checkoutFormElement) {
+        checkoutFormElement.reset();
+    }
+}

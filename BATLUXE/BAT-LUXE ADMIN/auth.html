@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - BatLuxe Beauty</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="admin-container">
+        <div class="login-card">
+            <h2 class="admin-title">Admin Login</h2>
+            <p class="admin-sub">BatLuxe Beauty Control Panel</p>
+
+            <form id="adminLoginForm">
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <div class="input-box">
+                        <i class="fas fa-user"></i>
+                        <input type="email" placeholder="Enter admin email" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="input-box">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Enter password" required>
+                    </div>
+                </div>
+
+                <a href="ADMIN-DASHBOARD.HTML"><button type="submit" class="login-btn">Login</button></a>
+
+                <p class="error-message" id="adminError" style="display: none;">
+                    Invalid email or password!
+                </p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

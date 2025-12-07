@@ -1,0 +1,122 @@
+/* COLOR PALETTE */
+:root {
+    --primary-pink: #f8c8dc;
+    --dark-pink: #e75480;
+    --light-pink: #fdf2f8;
+    --gold: #d4af37;
+    --white: #ffffff;
+    --black: #333333;
+    --nude: #f5e6d3;
+    --transition: all 0.3s ease;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Background */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--light-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Center Container */
+.admin-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* Card */
+.login-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--primary-pink);
+    text-align: center;
+}
+
+/* Title */
+.admin-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.admin-sub {
+    color: var(--dark-pink);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Input Groups */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-weight: 500;
+    color: var(--black);
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--dark-pink);
+    font-size: 16px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border-radius: 10px;
+    border: 1px solid var(--primary-pink);
+    outline: none;
+    background: var(--light-pink);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.input-box input:focus {
+    border-color: var(--dark-pink);
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--dark-pink);
+    color: var(--white);
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.login-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+/* Error Message */
+.error-message {
+    margin-top: 15px;
+    color: #ff3b3b;
+    font-size: 14px;
+}

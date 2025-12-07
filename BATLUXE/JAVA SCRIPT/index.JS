@@ -211,5 +211,73 @@
             setInterval(tick,1000);
             tick();
         });
-    
-    
+                document.addEventListener('DOMContentLoaded', function () {
+            // Find elements robustly
+            const toggle = document.querySelector('.search-toggle');
+            const container = document.getElementById('searchContainer');
+            const input = document.getElementById('searchInput');
+
+            if (!toggle) {
+                console.error('Search toggle button not found (.search-toggle).');
+                return;
+            }
+            if (!container || !input) {
+                console.error('Search container or input not found (#searchContainer or #searchInput).');
+                return;
+            }
+
+            // Toggle function
+            function openSearch() {
+                container.classList.add('open');
+                container.setAttribute('aria-hidden', 'false');
+                input.focus();
+            }
+            function closeSearch() {
+                container.classList.remove('open');
+                container.setAttribute('aria-hidden', 'true');
+                input.value = '';
+            }
+            function toggleSearch() {
+                if (container.classList.contains('open')) {
+                closeSearch();
+                } else {
+                openSearch();
+                }
+            }
+
+            // Click on icon toggles
+            toggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                toggleSearch();
+            });
+
+            // Click outside closes
+            document.addEventListener('click', function (e) {
+                if (!container.contains(e.target) && !toggle.contains(e.target)) {
+                closeSearch();
+                }
+            });
+
+            // Close on ESC
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' || e.key === 'Esc') {
+                closeSearch();
+                }
+            });
+
+            // Optional: handle Enter (for now just log search value)
+            input.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') {
+                const q = input.value.trim();
+                if (q.length) {
+                    // Replace the next line with real search logic or redirect, e.g:
+                    // window.location.href = `search.html?q=${encodeURIComponent(q)}`;
+                    console.log('Search for:', q);
+                    // For demo, we'll close after "search"
+                    closeSearch();
+                }
+                }
+            });
+            });
+
+                y

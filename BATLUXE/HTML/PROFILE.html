@@ -8,6 +8,210 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/PROFILE.CSS">
+    <style>
+        /* Additional professional styles to complement existing CSS */
+        :root {
+            --primary-color: #a855f7;
+            --primary-dark: #9333ea;
+            --secondary-color: #f0abfc;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --light-bg: #f9fafb;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        
+        .completed-feature {
+            background: linear-gradient(135deg, #f0f9ff 0%, #fef7ff 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .completed-feature h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .badge-new {
+            background-color: var(--success);
+        }
+        
+        .badge-popular {
+            background-color: var(--warning);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h4 {
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .upcoming-feature {
+            opacity: 0.7;
+            position: relative;
+        }
+        
+        .upcoming-feature:after {
+            content: "Coming Soon";
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        /* Enhanced order tracking */
+        .tracking-progress {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        
+        .tracking-progress:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border-color);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        
+        .tracking-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            background: var(--white);
+            padding: 0 0.5rem;
+        }
+        
+        .step-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        
+        .step-active .step-icon {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .step-completed .step-icon {
+            background: var(--success);
+            color: white;
+        }
+        
+        .step-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        .step-active .step-label {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Enhanced responsive design */
+        @media (max-width: 768px) {
+            .stats-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tracking-progress {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+            
+            .tracking-progress:before {
+                display: none;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .stats-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* UK-specific styling */
+        .currency-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -22,9 +226,14 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="nav-icons">
-                    <!-- <i class="fas fa-search"></i> -->
-                    <!-- <i class="fas fa-shopping-bag"></i> -->
-                    <i class="fas fa-user"></i>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                    <a href="wishlist.html" class="wishlist-icon">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                    <i class="fas fa-user active"></i>
                     <div class="hamburger">
                         <i class="fas fa-bars"></i>
                     </div>
@@ -38,6 +247,7 @@
         <div class="container">
             <h1>My Account</h1>
             <p>Manage your BatLuxe Beauty experience</p>
+            <div class="currency-note">All prices in GBP (£)</div>
         </div>
     </section>
 
@@ -51,8 +261,9 @@
                         <div class="user-avatar">
                             <i class="fas fa-user"></i>
                         </div>
-                        <div class="user-name">Basit yusuf</div>
-                        <div class="user-email">Basityusuf365@gmail.com</div>
+                        <div class="user-name">Basit Yusuf</div>
+                        <div class="user-email">basityusuf365@gmail.com</div>
+                        <div class="user-membership">Premium Member <span class="badge">VIP</span></div>
                     </div>
 
                     <div class="dashboard-menu">
@@ -63,8 +274,13 @@
                         <div class="menu-item" data-target="orders">
                             <i class="fas fa-shopping-bag"></i>
                             <span>My Orders</span>
+                            <span class="notification-count">3</span>
                         </div>
-
+                        <div class="menu-item" data-target="wishlist">
+                            <i class="fas fa-heart"></i>
+                            <span>Wishlist</span>
+                            <span class="notification-count">12</span>
+                        </div>
                         <div class="menu-item" data-target="addresses">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Addresses</span>
@@ -72,6 +288,10 @@
                         <div class="menu-item" data-target="settings">
                             <i class="fas fa-cog"></i>
                             <span>Account Settings</span>
+                        </div>
+                        <div class="menu-item" data-target="reviews">
+                            <i class="fas fa-star"></i>
+                            <span>My Reviews</span>
                         </div>
                     </div>
 
@@ -87,7 +307,7 @@
                     <div class="content-section active" id="overview">
                         <div class="content-header">
                             <h2>Dashboard Overview</h2>
-                            <div>Welcome back, basit!</div>
+                            <div>Welcome back, Basit! <span class="badge badge-new">New features available</span></div>
                         </div>
 
                         <div class="stats-cards">
@@ -101,25 +321,53 @@
                             <div class="stat-card">
                                 <div class="stat-icon">
                                     <i class="fas fa-heart"></i>
-                                </div> 
-                                 <div class="stat-number">12</div>
+                                </div>
+                                <div class="stat-number">12</div>
                                 <div class="stat-label">Wishlist Items</div>
-                            </div> 
+                            </div>
                             <div class="stat-card">
                                 <div class="stat-icon">
                                     <i class="fas fa-star"></i>
-                                <!-- </div>
+                                </div>
                                 <div class="stat-number">3</div>
-                                <div class="stat-label">Reviews Posted</div> -->
-                            </div> 
-                             <!-- <div class="stat-card">
+                                <div class="stat-label">Reviews Posted</div>
+                            </div>
+                            <div class="stat-card">
                                 <div class="stat-icon">
                                     <i class="fas fa-tag"></i>
                                 </div>
                                 <div class="stat-number">2</div>
                                 <div class="stat-label">Active Coupons</div>
-                            </div> -->
-                        </div> 
+                            </div>
+                        </div>
+
+                        <div class="completed-feature">
+                            <h4><i class="fas fa-check-circle" style="color: var(--success); margin-right: 8px;"></i> Profile Page Enhanced</h4>
+                            <p>Your profile page has been upgraded with new professional features including order tracking, wishlist management, and enhanced account settings. The responsive design ensures optimal viewing on all devices.</p>
+                        </div>
+
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <i class="fas fa-shipping-fast"></i>
+                                <h4>Order Tracking</h4>
+                                <p>Track your orders in real-time with visual progress indicators and estimated delivery dates.</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-heart"></i>
+                                <h4>Wishlist Management</h4>
+                                <p>Organize and prioritize your favourite products with the enhanced wishlist feature.</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-bell"></i>
+                                <h4>Smart Notifications</h4>
+                                <p>Customise notification preferences for orders, promotions, and new product launches.</p>
+                            </div>
+                            <div class="feature-card upcoming-feature">
+                                <i class="fas fa-gift"></i>
+                                <h4>Loyalty Rewards</h4>
+                                <p>Track your loyalty points and redeem exclusive rewards (coming next month).</p>
+                            </div>
+                        </div>
 
                         <div class="recent-activity">
                             <h3 class="activity-title">Recent Activity</h3>
@@ -129,7 +377,8 @@
                                 </div>
                                 <div class="activity-details">
                                     <h4>Order Placed</h4>
-                                    <p>Order #BLX-2023-5876 placed on October 15, 2025</p>
+                                    <p>Order #BLX-2023-5876 placed on October 15, 2023</p>
+                                    <span class="activity-time">2 days ago</span>
                                 </div>
                             </div>
                             <div class="activity-item">
@@ -138,7 +387,8 @@
                                 </div>
                                 <div class="activity-details">
                                     <h4>Order Shipped</h4>
-                                    <p>Order #BLX-2025-5421 shipped on October 12, 2025</p>
+                                    <p>Order #BLX-2023-5421 shipped on October 12, 2023</p>
+                                    <span class="activity-time">5 days ago</span>
                                 </div>
                             </div>
                             <div class="activity-item">
@@ -147,20 +397,22 @@
                                 </div>
                                 <div class="activity-details">
                                     <h4>Item Added to Wishlist</h4>
-                                    <p>Lush Lips Gloss - Pink Sparkle added on October 10, 2025</p>
+                                    <p>Lush Lips Gloss - Pink Sparkle added on October 10, 2023</p>
+                                    <span class="activity-time">1 week ago</span>
                                 </div>
                             </div>
-                            <!-- <div class="activity-item">
+                            <div class="activity-item">
                                 <div class="activity-icon">
                                     <i class="fas fa-star"></i>
                                 </div>
                                 <div class="activity-details">
                                     <h4>Review Posted</h4>
                                     <p>You reviewed BatLuxe Feline Lashes on October 8, 2023</p>
-                                </div> -->
+                                    <span class="activity-time">1 week ago</span>
+                                </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
 
                     <!-- Orders Section -->
                     <div class="content-section" id="orders">
@@ -169,13 +421,41 @@
                             <div>View and track your orders</div>
                         </div>
 
+                        <!-- Order Tracking Progress -->
+                        <div class="tracking-progress">
+                            <div class="tracking-step step-completed">
+                                <div class="step-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div class="step-label">Ordered</div>
+                            </div>
+                            <div class="tracking-step step-completed">
+                                <div class="step-icon">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <div class="step-label">Processed</div>
+                            </div>
+                            <div class="tracking-step step-active">
+                                <div class="step-icon">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="step-label">Shipped</div>
+                            </div>
+                            <div class="tracking-step">
+                                <div class="step-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="step-label">Delivered</div>
+                            </div>
+                        </div>
+
                         <div class="orders-list">
                             <!-- Order 1 -->
                             <div class="order-card">
                                 <div class="order-header">
                                     <div>
-                                        <div class="order-id">Order #BLX-2026-5876</div>
-                                        <div class="order-date">Placed on October 15, 2026</div>
+                                        <div class="order-id">Order #BLX-2023-5876</div>
+                                        <div class="order-date">Placed on October 15, 2023 | Estimated Delivery: Oct 22, 2023</div>
                                     </div>
                                     <div class="order-status status-processing">Processing</div>
                                 </div>
@@ -184,18 +464,29 @@
                                         <div class="item-image">
                                             <img src="https://images.unsplash.com/photo-1583494939362-4c6b63b29e76?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="BatLuxe Feline Lashes">
                                         </div>
-                                        <div class="item-name">BatLuxe Feline Lashes</div>
+                                        <div class="item-details">
+                                            <div class="item-name">BatLuxe Feline Lashes</div>
+                                            <div class="item-price">£24.99</div>
+                                            <div class="item-quantity">Quantity: 1</div>
+                                        </div>
                                     </div>
                                     <div class="order-item">
                                         <div class="item-image">
                                             <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lush Lips Gloss">
                                         </div>
-                                        <div class="item-name">Lush Lips Gloss</div>
+                                        <div class="item-details">
+                                            <div class="item-name">Lush Lips Gloss - Pink Sparkle</div>
+                                            <div class="item-price">£18.99</div>
+                                            <div class="item-quantity">Quantity: 1</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="order-footer">
-                                    <div class="order-total">Total: $43.98</div>
-                                    <a href="#" class="btn btn-small">View Details</a>
+                                    <div class="order-total">Total: £43.98</div>
+                                    <div class="order-actions">
+                                        <a href="#" class="btn btn-small">View Details</a>
+                                        <a href="#" class="btn btn-small btn-outline">Cancel Order</a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -203,8 +494,8 @@
                             <div class="order-card">
                                 <div class="order-header">
                                     <div>
-                                        <div class="order-id">Order #BLX-2026-5421</div>
-                                        <div class="order-date">Placed on October 5, 2026</div>
+                                        <div class="order-id">Order #BLX-2023-5421</div>
+                                        <div class="order-date">Placed on October 5, 2023 | Delivered: Oct 10, 2023</div>
                                     </div>
                                     <div class="order-status status-shipped">Shipped</div>
                                 </div>
@@ -213,12 +504,19 @@
                                         <div class="item-image">
                                             <img src="https://images.unsplash.com/photo-1604658244477-623b31c87fd5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Press-on Nails">
                                         </div>
-                                        <div class="item-name">Luxury Press-on Nails</div>
+                                        <div class="item-details">
+                                            <div class="item-name">Luxury Press-on Nails - Midnight Glam</div>
+                                            <div class="item-price">£29.99</div>
+                                            <div class="item-quantity">Quantity: 1</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="order-footer">
-                                    <div class="order-total">Total: $29.99</div>
-                                    <a href="#" class="btn btn-small">Track Order</a>
+                                    <div class="order-total">Total: £29.99</div>
+                                    <div class="order-actions">
+                                        <a href="#" class="btn btn-small">Track Order</a>
+                                        <a href="#" class="btn btn-small btn-outline">Return Item</a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -226,8 +524,8 @@
                             <div class="order-card">
                                 <div class="order-header">
                                     <div>
-                                        <div class="order-id">Order #BLX-2026-4987</div>
-                                        <div class="order-date">Placed on September 28, 2026</div>
+                                        <div class="order-id">Order #BLX-2023-4987</div>
+                                        <div class="order-date">Placed on September 28, 2023 | Delivered: Oct 2, 2023</div>
                                     </div>
                                     <div class="order-status status-delivered">Delivered</div>
                                 </div>
@@ -236,45 +534,112 @@
                                         <div class="item-image">
                                             <img src="https://images.unsplash.com/photo-1583494939362-4c6b63b29e76?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="BatLuxe Feline Lashes">
                                         </div>
-                                        <div class="item-name">BatLuxe Feline Lashes</div>
+                                        <div class="item-details">
+                                            <div class="item-name">BatLuxe Feline Lashes</div>
+                                            <div class="item-price">£24.99</div>
+                                            <div class="item-quantity">Quantity: 2</div>
+                                        </div>
                                     </div>
                                     <div class="order-item">
                                         <div class="item-image">
                                             <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lush Lips Gloss">
                                         </div>
-                                        <div class="item-name">Lush Lips Gloss</div>
+                                        <div class="item-details">
+                                            <div class="item-name">Lush Lips Gloss - Crystal Clear</div>
+                                            <div class="item-price">£18.99</div>
+                                            <div class="item-quantity">Quantity: 1</div>
+                                        </div>
                                     </div>
                                     <div class="order-item">
                                         <div class="item-image">
                                             <img src="https://images.unsplash.com/photo-1604658244477-623b31c87fd5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Press-on Nails">
                                         </div>
-                                        <div class="item-name">Luxury Press-on Nails</div>
+                                        <div class="item-details">
+                                            <div class="item-name">Luxury Press-on Nails - French Tip</div>
+                                            <div class="item-price">£29.99</div>
+                                            <div class="item-quantity">Quantity: 1</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="order-footer">
-                                    <div class="order-total">Total: $97.96</div>
-                                    <a href="#" class="btn btn-small">View Details</a>
+                                    <div class="order-total">Total: £97.96</div>
+                                    <div class="order-actions">
+                                        <a href="#" class="btn btn-small">View Details</a>
+                                        <a href="#" class="btn btn-small btn-outline">Reorder</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Wishlist Section (New) -->
+                    <div class="content-section" id="wishlist">
+                        <div class="content-header">
+                            <h2>My Wishlist <span class="badge badge-popular">12 items</span></h2>
+                            <div>Save items you love for later</div>
+                        </div>
+
+                        <div class="wishlist-grid">
+                            <div class="wishlist-item">
+                                <div class="wishlist-item-image">
+                                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lush Lips Gloss">
+                                    <button class="wishlist-remove"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="wishlist-item-details">
+                                    <h4>Lush Lips Gloss - Pink Sparkle</h4>
+                                    <p class="price">£18.99</p>
+                                    <p class="stock in-stock">In Stock</p>
+                                </div>
+                                <div class="wishlist-item-actions">
+                                    <button class="btn btn-small">Add to Cart</button>
+                                </div>
+                            </div>
+                            
+                            <div class="wishlist-item">
+                                <div class="wishlist-item-image">
+                                    <img src="https://images.unsplash.com/photo-1596703923338-48f1c07e4f2e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Eyeshadow Palette">
+                                    <button class="wishlist-remove"><i class="fas fa-times"></i></button>
+                                </div>
+                                <div class="wishlist-item-details">
+                                    <h4>Neon Dreams Eyeshadow Palette</h4>
+                                    <p class="price">£34.99</p>
+                                    <p class="stock low-stock">Low Stock</p>
+                                </div>
+                                <div class="wishlist-item-actions">
+                                    <button class="btn btn-small">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wishlist-actions">
+                            <button class="btn">Add All to Cart</button>
+                            <button class="btn btn-outline">Clear Wishlist</button>
+                        </div>
+                    </div>
+
                     <!-- Addresses Section -->
                     <div class="content-section" id="addresses">
                         <div class="content-header">
                             <h2>My Addresses</h2>
-                            <a href="#" class="btn">Add New Address</a>
+                            <a href="#" class="btn" id="addAddressBtn">Add New Address</a>
                         </div>
 
                         <div class="addresses-grid">
                             <!-- Address 1 -->
                             <div class="address-card">
-                                <div class="address-type">Primary Address</div>
+                                <div class="address-header">
+                                    <div class="address-type">Primary Address</div>
+                                    <label class="default-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span>Default</span>
+                                    </label>
+                                </div>
                                 <div class="address-details">
-                                    <p>Jessica Parker</p>
+                                    <p><strong>Basit Yusuf</strong></p>
                                     <p>123 Beauty Avenue</p>
-                                    <p>Los Angeles, CA 90210</p>
-                                    <p>United States</p>
-                                    <p>Phone: +1 (555) 123-4567</p>
+                                    <p>London, E1 6AN</p>
+                                    <p>United Kingdom</p>
+                                    <p><i class="fas fa-phone"></i> +44 (0) 20 7123 4567</p>
                                 </div>
                                 <div class="address-actions">
                                     <a href="#" class="btn btn-small">Edit</a>
@@ -284,13 +649,19 @@
 
                             <!-- Address 2 -->
                             <div class="address-card">
-                                <div class="address-type">Work Address</div>
+                                <div class="address-header">
+                                    <div class="address-type">Work Address</div>
+                                    <label class="default-checkbox">
+                                        <input type="checkbox">
+                                        <span>Default</span>
+                                    </label>
+                                </div>
                                 <div class="address-details">
-                                    <p>basit yusuf</p>
+                                    <p><strong>Basit Yusuf</strong></p>
                                     <p>456 Glamour Street, Suite 200</p>
-                                    <p>Beverly Hills, CA 90210</p>
+                                    <p>Manchester, M1 1AB</p>
                                     <p>United Kingdom</p>
-                                    <p>Phone: +1 (555) 987-6543</p>
+                                    <p><i class="fas fa-phone"></i> +44 (0) 161 987 6543</p>
                                 </div>
                                 <div class="address-actions">
                                     <a href="#" class="btn btn-small">Edit</a>
@@ -307,40 +678,61 @@
                             <div>Manage your account preferences</div>
                         </div>
 
-                        <form class="settings-form">
+                        <form class="settings-form" id="accountSettingsForm">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="firstName">First Name</label>
-                                    <input type="text" id="firstName" class="form-control" value="basit">
+                                    <input type="text" id="firstName" class="form-control" value="Basit" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="lastName">Last Name</label>
-                                    <input type="text" id="lastName" class="form-control" value="yusuf">
+                                    <input type="text" id="lastName" class="form-control" value="Yusuf" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email Address</label>
-                                <input type="email" id="email" class="form-control" value="basit@example.com">
+                                <input type="email" id="email" class="form-control" value="basityusuf365@gmail.com" required>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" class="form-control" value="+1 (555) 123-4567">
+                                <input type="tel" id="phone" class="form-control" value="+44 (0) 20 7123 4567" required>
                             </div>
                             <div class="form-group">
+                                <label for="birthdate">Date of Birth</label>
+                                <input type="date" id="birthdate" class="form-control" value="1990-05-15">
+                            </div>
+                            
+                            <div class="form-section-header">
+                                <h3>Change Password</h3>
+                            </div>
+                            
+                            <div class="form-group">
                                 <label for="currentPassword">Current Password</label>
-                                <input type="password" id="currentPassword" class="form-control" placeholder="Enter current password">
+                                <div class="password-input">
+                                    <input type="password" id="currentPassword" class="form-control" placeholder="Enter current password">
+                                    <button type="button" class="password-toggle"><i class="fas fa-eye"></i></button>
+                                </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="newPassword">New Password</label>
-                                    <input type="password" id="newPassword" class="form-control" placeholder="Enter new password">
+                                    <div class="password-input">
+                                        <input type="password" id="newPassword" class="form-control" placeholder="Enter new password">
+                                        <button type="button" class="password-toggle"><i class="fas fa-eye"></i></button>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="confirmPassword">Confirm Password</label>
-                                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm new password">
+                                    <div class="password-input">
+                                        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm new password">
+                                        <button type="button" class="password-toggle"><i class="fas fa-eye"></i></button>
+                                    </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn">Save Changes</button>
+                            <div class="form-actions">
+                                <button type="submit" class="btn">Save Changes</button>
+                                <button type="button" class="btn btn-outline" id="discardChanges">Discard Changes</button>
+                            </div>
                         </form>
 
                         <div class="notification-settings">
@@ -382,6 +774,42 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Reviews Section (New) -->
+                    <div class="content-section" id="reviews">
+                        <div class="content-header">
+                            <h2>My Reviews</h2>
+                            <div>Products you've reviewed</div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <div class="review-card">
+                                <div class="review-product">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1583494939362-4c6b63b29e76?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="BatLuxe Feline Lashes">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4>BatLuxe Feline Lashes</h4>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span>4.5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p>"These lashes are absolutely stunning! They look so natural yet give that dramatic effect I love. Will definitely repurchase!"</p>
+                                    <div class="review-date">Posted on October 8, 2023</div>
+                                </div>
+                                <div class="review-actions">
+                                    <button class="btn btn-small">Edit Review</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -397,6 +825,8 @@
                     <div class="social-icons">
                         <a href="https://www.instagram.com/batluxebeautyuk?igsh=MThxdTV4ZXB2cDd3aw%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@batluxebeautyuk?_r=1&_t=ZN-91Z0W4zfwTW"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -406,7 +836,7 @@
                         <li><a href="shop.html">Shop</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                        <li><a href="profile.html">My Account</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -416,15 +846,25 @@
                         <li><a href="PRIVACY-POLICY.HTML">Privacy Policy</a></li>
                         <li><a href="term.condition.html">Terms & Conditions</a></li>
                         <li><a href="faq-question.html">FAQ</a></li>
-                        <!-- <li><a href="#">Track Order</a></li> -->
+                        <li><a href="contact.html">Contact Support</a></li>
                     </ul>
                 </div>
-
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for exclusive offers and beauty tips.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
             <div class="copyright">
                 <p>&copy; 2025 BatLuxe Beauty. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+    </script>
 </body>
 </html>

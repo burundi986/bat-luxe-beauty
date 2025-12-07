@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bat-luxe beauty</title>
-    <script src="../JAVA SCRIPT/HOME.JS"></script>
-    <link rel="stylesheet" href="../CSS/home.css">
+    <script src="../JAVA SCRIPT/index.JS" defer></script>
+    <link rel="stylesheet" href="../CSS/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -20,12 +20,12 @@
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <!-- <li><a href="BLOG.HTML">Blog</a></li> -->
+                    
                 </ul>
+        </div>
+
                 <div class="nav-icons">
                     <div class="cart-icon" id="cartIcon">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="cart-count" id="cartCount">0</span>
                     </div>
                     <a href="PROFILE.html"><i class="fas fa-user"></i></a>
                     <div class="hamburger">
@@ -41,7 +41,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Luxury Beauty, Elevated</h1>
-                <p>Glow In Your Own Luxury</p>
+                In Your Own Luxury</p>
                 <a href="shop.html" class="btn">Shop Now</a>
             </div>
         </div>
@@ -65,54 +65,42 @@
                 <p>Discover our best-selling beauty essentials</p>
             </div>
             <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Lashes" class="product-img">
-                    <div class="product-info">
-                        <div class="product-category">Lashes</div>
-                        <h3 class="product-name">BatLuxe Feline Lashes</h3>
-                        <div class="product-price">$24.99</div>
-                        <div class="product-actions">
-                            <button class="btn add-to-cart-btn" data-id="1" data-name="BatLuxe Feline Lashes" data-price="24.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                    <!-- Product 1 -->
+                
+                       <div class="product-card">
+                        <img src="../N015.jpg" alt="NAIL" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">Press on Nails</div>
+                            <h3 class="product-name">Blush Marble Elegance-long coffin press-on nails</h3>
+                            <div class="product-price" data-original-price="10.00">£10.00</div>
+                            <details>
+                               A soft, feminine blend of blush pink and luxury marble accents.
+                                This set gives you that classy, rich-auntie vibe with a touch of glam — perfect for date nights, photoshoots, events, or your everyday soft-girl look.
+                            </details>
+
+                            <div class="product-actions">
+                                <a href="press on nails.html"><button class="btn add-to-cart-btn">Shop now</button></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Luxury Lip Gloss" class="product-img">
-                    <div class="product-info">
-                        <div class="product-category">Lip Gloss</div>
-                        <h3 class="product-name">Lush Lips Gloss</h3>
-                        <div class="product-price">$18.99</div>
-                        <div class="product-actions">
-                            <button class="btn add-to-cart-btn" data-id="2" data-name="Lush Lips Gloss" data-price="18.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
+                              
+                  <!-- Product 2 -->
+                    <div class="product-card">
+                        <img src="../LL002.jpg" alt="lip liner - black" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">lip liner</div>
+                            <h3 class="product-name">Batluxe Beauty Lip Liner - classic black Collection</h3>
+                            <div class="product-price" data-original-price="5.99">£5.99</div>
+                            <details>Luxurious, durable and perfect for your glosses. This Batluxe Beauty lip gloss box gives your products a premium, classy finish—sleek, girly and ready for retail.</details>
+                            <div class="product-actions">
+                                 <a href="press on nails.html"><button class="btn add-to-cart-btn">Shop now</button></a>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Press-on Nails" class="product-img">
-                    <div class="product-info">
-                        <div class="product-category">Nails</div>
-                        <h3 class="product-name">Press-on Luxury Set</h3>
-                        <div class="product-price">$29.99</div>
-                        <div class="product-actions">
-                            <button class="btn add-to-cart-btn" data-id="3" data-name="Press-on Luxury Set" data-price="29.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Lip Liner" class="product-img">
-                    <div class="product-info">
-                        <div class="product-category">Lip Liner</div>
-                        <h3 class="product-name">Precision Lip Liner</h3>
-                        <div class="product-price">$14.99</div>
-                        <div class="product-actions">
-                            <button class="btn add-to-cart-btn" data-id="4" data-name="Precision Lip Liner" data-price="14.99" data-image="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
+
+  
+ 
             </div>
         </div>
     </section>
@@ -132,15 +120,15 @@
         <div class="cart-summary">
             <div class="summary-row">
                 <span>Subtotal</span>
-                <span id="subtotal">$0.00</span>
+                <span id="subtotal">£0.00</span>
             </div>
             <div class="summary-row">
                 <span>Delivery Fee</span>
-                <span id="deliveryFee">$0.00</span>
+                <span id="deliveryFee">£0.00</span>
             </div>
             <div class="summary-row total">
                 <span>Total</span>
-                <span id="total">$0.00</span>
+                <span id="total">£0.00</span>
             </div>
             
             <button class="checkout-btn">Proceed to Checkout</button>

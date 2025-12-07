@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - BatLuxe Beauty</title>
+    <link rel="stylesheet" href="../CSS/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Order Summary Section -->
+    <section class="order-summary-section">
+        <div class="container">
+            <div class="order-summary-card">
+                <h2><i class="fas fa-shopping-bag"></i> Order Summary</h2>
+                
+                <div class="order-details" id="orderDetails">
+                    <!-- Order details will be populated by JavaScript -->
+                </div>
+                
+                <div class="total-amount">
+                    <h3>Total Amount:</h3>
+                    <div class="amount" id="totalAmount">£0.00</div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <a href="checkout.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Checkout
+                    </a>
+                    <a href="#payment-section" class="btn btn-primary">
+                        Continue to Payment <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Your existing payment section -->
+    <section id="payment-section">
+        <!-- Your payment form goes here -->
+    </section>
+
+    <script>
+        // Load order data from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderData = JSON.parse(localStorage.getItem('currentOrder'));
+            
+            if (!orderData) {
+                // Redirect back to shop if no order data
+                window.location.href = 'shop.html';
+                return;
+            }
+            
+            // Display order details
+            const orderDetails = document.getElementById('orderDetails');
+            const totalAmount = document.getElementById('totalAmount');
+            
+            let itemsHTML = '';
+            orderData.items.forEach(item => {
+                itemsHTML += `
+                    <div class="order-item">
+                        <div class="item-info">
+                            <h4>${item.name}</h4>
+                            <div class="item-quantity">Qty: ${item.quantity}</div>
+                        </div>
+                        <div class="item-price">£${(item.price * item.quantity).toFixed(2)}</div>
+                    </div>
+                `;
+            });
+            
+            orderDetails.innerHTML = `
+                <div class="customer-info">
+                    <h3><i class="fas fa-user"></i> Customer Information</h3>
+                    <p><strong>Name:</strong> ${orderData.customer.name}</p>
+                    <p><strong>Email:</strong> ${orderData.customer.email}</p>
+                    <p><strong>Phone:</strong> ${orderData.customer.phone}</p>
+                    <p><strong>Address:</strong> ${orderData.customer.address}, ${orderData.customer.city}, ${orderData.customer.postcode}, ${orderData.customer.country}</p>
+                </div>
+                
+                <div class="items-list">
+                    <h3><i class="fas fa-box"></i> Order Items</h3>
+                    ${itemsHTML}
+                </div>
+                
+                <div class="summary-breakdown">
+                    <h3><i class="fas fa-receipt"></i> Summary</h3>
+                    <div class="breakdown-item">
+                        <span>Subtotal:</span>
+                        <span>${orderData.summary.subtotal}</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Delivery:</span>
+                        <span>${orderData.summary.delivery}</span>
+                    </div>
+                    <div class="breakdown-item total">
+                        <span>Total:</span>
+                        <span>${orderData.summary.total}</span>
+                    </div>
+                </div>
+            `;
+            
+            totalAmount.textContent = orderData.summary.total;
+            
+            // Save order data to session for payment processing
+            sessionStorage.setItem('paymentAmount', orderData.summary.total.replace('£', ''));
+            sessionStorage.setItem('orderId', orderData.orderId);
+        });
+    </script>
+</body>
+</html>
